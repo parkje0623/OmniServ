@@ -1,0 +1,66 @@
+.content-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-content .content-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.content-content .content-detail .result {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.content-content .content-detail .calculator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.currency-from, .currency-to,
+.measurement-from, .measurement-to {
+    flex: 1;
+}
+
+.calculator .input-currency {
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Flip Button */
+.currency-flip,
+.measurement-flip {
+    height: 60%;
+}
+
+.currency-flip button,
+.measurement-flip button {
+    height: 100%;
+    width: 4rem;
+    cursor: pointer;
+}
+
+/* Only for Measurement Page */
+.measurement-calculator {
+    display: flex;
+    flex-direction: column;
+}
+
+.measurement-category {
+    padding: 1rem;
+}
+
+.measurement-section {
+    height: 60%;
+}

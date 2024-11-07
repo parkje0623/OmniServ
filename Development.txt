@@ -1,0 +1,48 @@
+React Development:
+ 1. Home Page
+ 2. Top Header Bar
+ 3. Side Bar
+    - Title (div - center tetxt)
+    - Sections (div)
+        - Icon (left-align)
+        - Text in <h4> (right-align)
+
+
+React Learning
+ 1. Layout (Component) - Important in SPA (single-page application)
+    - Use Layout Component for Uniform Structure (like Sidebar, Header)
+ 2. NavLink - Links to Navigate Between the Pages and Apply isActive className
+ 3. BrowserRouter as Router, Routes, Route
+    - BrowserRouter as Router: 
+        -> Component, top-level wrapper for your routing configuration
+        -> Enables the use of the browser's History API to handle routing
+    - Routes:
+        -> Component, It acts as a container for all Route components
+    - Route:
+        -> Component, where you define a specific path and the component that should be rendered when the user navigates to that path
+ 4. useEffect vs. useCallback vs. useMemo
+    - useEffect: Run side-effects in functional component
+        -> Fetching data
+        -> Running code in response to specific state/prop changes
+    - useCallback: Memoize a function, only re-created if dependencies change
+        -> Passing stable callback functions (onClick, onChange, etc.)
+        -> Avoiding re-renders (when component receives the same function reference)
+    - useMemo: Memoize a computed value, only re-calcaulted if dependencies change
+        -> Expensive Calculation
+        -> Optimizing derived data
+
+
+CSS Learning
+ 1. rem (root em) vs px (absolute unit)
+    - Use 'px' if you want the size of the element/font to be fixed
+    - Use 'rem' if you want to create flexible and responsive design layouts
+ 2. @media (min-width: 1440px) { ... }
+    - If the browser's width is greater than or equal to 1440px, apply CSS inside the brackets.
+ 3. linear-gradient()
+    - Creating Linear Gradient CSS styling
+    - linear-gradient(DIRECTION, COLOR_STOP1, COLOR_STOP2, ...)
+    - E.g., linear-gradient(to right, 'red' 0%, 'blue' 50%, 'red' 100%);
+        -> From left to right, color is red at start, transitioning to blue at the middle, back to red at the end
+ 4. 
+
+JS Learning

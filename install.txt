@@ -1,0 +1,78 @@
+React Setup:
+ - npx create-react-app omniserv
+ - npm install react-router-dom
+
+
+Firebase Setup:
+ 1. npm install firebase
+ 2. create 'firebase.js' file inside of /src folder
+    2.1 Copy npm firebase initialization (given from Firebase) into the file
+ 3. Install Firebase CLI:
+    3.1 npm install -g firebase-tools
+ 4. Before Firebase Init:
+    4.1 npm run build (to build our React application)
+ 5. Firebase Deploy:
+    5.1 firebase login
+    5.2 firebase init
+        5.2.a Use existing project & Select Firebase Hosting
+        5.2.b Instead of public folder use 'build' for firebase public folder
+        5.2.c DO NOT overwrite the index.hmtl
+    5.3 firebase deploy
+ 6. Check the Deployed website to view the page running
+
+
+Environmental Variables for React:
+ 1. npm install dotenv
+ 2. save the variables - use 'REACT_APP_' as prefix (e.g., REACT_APP_GOOGLE_API)
+
+
+Font Awesome Setup:
+ 1. npm install @fortawesome/fontawesome
+ 2. npm install @fortawesome/react-fontawesome
+ 3. npm install @fortawesome/fontawesome-ICON_TYPE_HERE
+ 4. import { FontAwsomeIcon } from @fortawesome/react-fontawesome
+ 5. import { ICON_NAME_HERE } from @ICON_NPM_INSTALLED
+ 6. <FontAwsomeIcon icon={ICON_NAME_HERE} />
+
+
+Google Font Setup:
+ 1. Find the Google Font you want to add
+ 2. Copy 'Embed Code' and add it to 'index.html' in public folder
+ 3. Apply the Font Style in CSS (e.g., h3 { font-family: "Lato", sans-serif })
+
+
+Firebase & Google Sign-in/up Setup:
+ 1. npm install 'react-google-button' for Google Button
+ 2. import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+ 3. import GoogleButton from 'react-google-button'
+ 4. Go to Firebase Authentication Page: 
+   4.1 Enable Google & Email Login from the Authentication Section
+ 5. For Google Login:
+   5.1 Make use of [GooleButton and signInWithPopup(auth, provider): function]
+ 6. For Email Login:
+   6.1 Make use of [input fields & signInWithEmailAndPassword(auth, email, pwd): function]
+ 7. For Email SignUp:
+   7.1 Make use of [input fields & createUserWithEmailAndPassword(auth, email, pwd): function]
+ 8. For Checking if the User is signed in or not:
+   8.1 Create a custom hook with import onAuthStateChanged from firebase/auth
+   8.2 onAuthStateChanged (callback-based event listener) for authentication state changes
+      8.2.1 Make sure to clean up the listener by returning the function.
+
+
+Axios:
+ 1. Used for Data Fetching through APIs
+
+
+Chart.js:
+ 1. npm install chart.js react-chartjs-2
+ 2. npm install chartjs-chart-matrix
+ 3. npm install chartjs-plugin-datalabels
+
+Papaparse (for fetching CSV data):
+ 1. npm install papaparse
+
+
+
+
+
+ 

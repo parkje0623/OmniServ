@@ -1,0 +1,34 @@
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+}
+
+h4 {
+    font-weight: normal;
+}
+
+.movie-list-content {
+    padding: 0; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.movie-list-content li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.movie-list-content img {
+    width: 100%;
+    height: 85%;
+}
+
+.movie-list-content img:hover {
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 -12px 8px -8px rgb(255, 0, 0), 
+                0 12px 8px -8px rgb(38, 0, 255);
+    transition: all 0.3s ease 0s;
+}
+
