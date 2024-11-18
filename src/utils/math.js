@@ -7,9 +7,9 @@ export const formatNumber = (number, isPercentage) => {
         return `${Math.round((number + Number.EPSILON) * 1000) / 10} %`;
     } else {
         // For Large Number Formatting
-        if (number > 1000000) {
+        if (number >= 1000000) {
             return `${Math.round(((number / 1000000) + Number.EPSILON) * 10) / 10} M`;
-        } else if (number > 1000) {
+        } else if (number >= 1000) {
             return `${Math.round(((number / 1000) + Number.EPSILON) * 10) / 10} K`;
         } else {
             return Math.round(number + Number.EPSILON).toString();
@@ -69,9 +69,10 @@ export const calculateKPIData = (data) => {
     data.forEach(row => {
         avgTimeSpent += parseInt(row.time_spent);
         avgIncome += parseFloat(row.income);
-        debtUsers += row.indebt === 'True' ? 1 : 0;
-        owners += row.isHomeOwner === 'True' || row.Owns_Car === 'True' ? 1 : 0;
+        debtUsers += row.indebt === 'TRUE' ? 1 : 0;
+        owners += row.isHomeOwner === 'TRUE' || row.Owns_Car === 'TRUE' ? 1 : 0;
     });
+
     const dataLength = data.length;
     return {
         avgTimeSpent: Math.round(avgTimeSpent / dataLength),
@@ -128,4 +129,34 @@ export const calculateTimeOnInterest = (data, ageGroups, interests) => {
         });
     });
     return interestMap;
+};
+
+
+// Helper Function for Calculating Simple KPI Data (in Analytics)
+export const calculateSimpleKPIData = (data) => {
+    let [avgAge, totalHours, topInterestTimeSpent] = [0, 0, {}];
+    data.forEach(row => {
+        avgAge += parseInt(row.age);
+        totalHours += parseInt(row.time_spent);
+
+        if (row.interests) {
+            if (!topInterestTimeSpent[row.interests]) {
+                topInterestTimeSpent[row.interests] = 0;
+            }
+            topInterestTimeSpent[row.interests] += parseInt(row.time_spent);
+        }
+    });
+
+    // To Find the Top Gender:
+    const topInterest = Object.keys(topInterestTimeSpent).reduce((a, b) => 
+        topInterestTimeSpent[a] > topInterestTimeSpent[b] ? a : b
+    );
+    // Set the Returning Data
+    const dataLength = data.length;
+    return {
+        totalUsers: formatNumber(dataLength),
+        totalTimeSpent: formatNumber(totalHours),
+        avgAge: formatNumber(avgAge / dataLength),
+        topInterestEngagement: { interest: `${topInterest}`, value: formatNumber(topInterestTimeSpent[`${topInterest}`]) }
+    };
 };

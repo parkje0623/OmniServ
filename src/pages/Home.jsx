@@ -23,10 +23,16 @@ function Home() {
                             </ul>
                         </li>
                         <li>
-                            <strong>Analytics (In Progress):</strong>
+                            <strong>Analytics (Ready):</strong>
                             <ul>
                                 <li>
-                                    In Progress
+                                    Handling simple KPI, Line, Doughnut Charts using ChartJS
+                                </li>
+                                <li>
+                                    Handling table element to display variety data in one element
+                                </li>
+                                <li>
+                                    Displaying a clean dashboard at a glance.
                                 </li>
                             </ul>  
                         </li>

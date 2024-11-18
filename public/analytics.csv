@@ -1,7 +1,7 @@
 age,gender,time_spent,platform,interests,location,demographics,profession,income,indebt,isHomeOwner,Owns_Car
-34,non-binary,9,YouTube,Travel,United States,Sub_Urban,Software Engineer,10012,FALSE,TRUE,TRUE
+34,non-binary,1,YouTube,Travel,United States,Sub_Urban,Software Engineer,10012,FALSE,TRUE,TRUE
 37,male,8,Facebook,Travel,United Kingdom,Rural,Software Engineer,10021,TRUE,FALSE,TRUE
-27,female,9,Instagram,Travel,United Kingdom,Rural,Marketer Manager,10028,TRUE,FALSE,FALSE
+27,female,1,Instagram,Travel,United Kingdom,Rural,Marketer Manager,10028,TRUE,FALSE,FALSE
 24,female,8,Facebook,Sports,United States,Sub_Urban,Software Engineer,10048,FALSE,TRUE,TRUE
 19,female,5,Instagram,Travel,United Kingdom,Sub_Urban,Software Engineer,10058,TRUE,FALSE,TRUE
 26,non-binary,7,Facebook,Sports,United States,Rural,Marketer Manager,10064,TRUE,TRUE,FALSE
@@ -13,7 +13,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 25,female,8,YouTube,Travel,United Kingdom,Sub_Urban,Software Engineer,10105,TRUE,FALSE,FALSE
 45,female,5,YouTube,Lifestyle,United States,Sub_Urban,Software Engineer,10120,TRUE,TRUE,FALSE
 46,non-binary,5,YouTube,Travel,United States,Urban,Student,10122,TRUE,FALSE,TRUE
-25,non-binary,9,Instagram,Travel,United Kingdom,Urban,Student,10148,FALSE,FALSE,FALSE
+25,non-binary,1,Instagram,Travel,United Kingdom,Urban,Student,10148,FALSE,FALSE,FALSE
 56,female,7,Instagram,Sports,United States,Urban,Student,10175,FALSE,FALSE,TRUE
 43,female,7,Instagram,Travel,United States,Sub_Urban,Marketer Manager,10191,TRUE,FALSE,FALSE
 43,male,8,Facebook,Sports,United States,Sub_Urban,Marketer Manager,10209,FALSE,TRUE,TRUE
@@ -27,12 +27,12 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 37,male,8,Facebook,Sports,United States,Rural,Software Engineer,10237,TRUE,FALSE,FALSE
 18,male,8,YouTube,Sports,United Kingdom,Urban,Software Engineer,10250,TRUE,TRUE,TRUE
 61,female,9,Instagram,Sports,Australia,Sub_Urban,Marketer Manager,10282,FALSE,TRUE,FALSE
-58,female,9,Instagram,Travel,United Kingdom,Urban,Student,10294,FALSE,TRUE,FALSE
+58,female,1,Instagram,Travel,United Kingdom,Urban,Student,10294,FALSE,TRUE,FALSE
 52,male,2,Facebook,Sports,United Kingdom,Rural,Software Engineer,10312,TRUE,TRUE,TRUE
 55,male,7,YouTube,Travel,Australia,Rural,Marketer Manager,10320,FALSE,FALSE,FALSE
 54,male,8,Facebook,Lifestyle,Australia,Sub_Urban,Marketer Manager,10328,FALSE,FALSE,TRUE
 38,female,7,Instagram,Sports,Australia,Rural,Software Engineer,10331,FALSE,FALSE,TRUE
-53,non-binary,9,Instagram,Travel,United States,Sub_Urban,Software Engineer,10340,FALSE,FALSE,TRUE
+53,non-binary,1,Instagram,Travel,United States,Sub_Urban,Software Engineer,10340,FALSE,FALSE,TRUE
 41,non-binary,5,Facebook,Sports,United States,Sub_Urban,Marketer Manager,10350,FALSE,FALSE,FALSE
 54,male,8,Instagram,Travel,United Kingdom,Rural,Marketer Manager,10355,TRUE,FALSE,TRUE
 53,non-binary,9,Instagram,Travel,United States,Sub_Urban,Student,10368,FALSE,TRUE,TRUE
@@ -46,14 +46,14 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 63,non-binary,8,Facebook,Travel,United Kingdom,Rural,Marketer Manager,10470,TRUE,FALSE,TRUE
 20,male,8,Facebook,Lifestyle,United Kingdom,Urban,Marketer Manager,10490,TRUE,FALSE,FALSE
 27,male,8,YouTube,Sports,Australia,Rural,Student,10495,FALSE,TRUE,FALSE
-64,male,9,Facebook,Travel,United States,Urban,Marketer Manager,10501,FALSE,FALSE,FALSE
+64,male,1,Facebook,Travel,United States,Urban,Marketer Manager,10501,FALSE,FALSE,FALSE
 31,non-binary,9,Facebook,Sports,Australia,Urban,Student,10524,TRUE,TRUE,FALSE
 35,male,9,Instagram,Travel,Australia,Urban,Software Engineer,10540,FALSE,FALSE,TRUE
 50,male,4,YouTube,Sports,United Kingdom,Rural,Student,10541,TRUE,TRUE,TRUE
 49,non-binary,9,Instagram,Travel,United Kingdom,Urban,Student,10546,FALSE,TRUE,FALSE
 29,non-binary,5,Instagram,Lifestyle,United States,Urban,Marketer Manager,10555,FALSE,FALSE,FALSE
 55,female,9,YouTube,Sports,United Kingdom,Sub_Urban,Student,10555,TRUE,TRUE,FALSE
-64,non-binary,9,YouTube,Travel,United States,Sub_Urban,Software Engineer,10561,FALSE,TRUE,FALSE
+64,non-binary,1,YouTube,Travel,United States,Sub_Urban,Software Engineer,10561,FALSE,TRUE,FALSE
 46,female,7,Facebook,Travel,United Kingdom,Urban,Student,10564,TRUE,TRUE,TRUE
 43,non-binary,9,YouTube,Travel,United States,Urban,Marketer Manager,10564,FALSE,TRUE,FALSE
 27,female,6,Instagram,Travel,United Kingdom,Urban,Student,10595,TRUE,FALSE,TRUE
@@ -66,7 +66,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 50,non-binary,9,YouTube,Lifestyle,United Kingdom,Urban,Student,10677,TRUE,TRUE,FALSE
 26,non-binary,8,Facebook,Lifestyle,United Kingdom,Urban,Student,10681,FALSE,TRUE,TRUE
 43,male,7,Instagram,Lifestyle,United Kingdom,Sub_Urban,Student,10701,TRUE,TRUE,FALSE
-40,male,5,Facebook,Sports,United Kingdom,Urban,Marketer Manager,10711,FALSE,TRUE,FALSE
+40,male,9,Facebook,Sports,United Kingdom,Urban,Marketer Manager,10711,FALSE,TRUE,FALSE
 20,male,8,Instagram,Sports,United Kingdom,Urban,Marketer Manager,10719,TRUE,TRUE,FALSE
 40,male,6,Facebook,Sports,United States,Rural,Software Engineer,10726,FALSE,FALSE,TRUE
 56,non-binary,7,Facebook,Lifestyle,United Kingdom,Rural,Software Engineer,10727,FALSE,FALSE,TRUE
@@ -82,19 +82,19 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 62,male,5,Facebook,Sports,United Kingdom,Urban,Software Engineer,10792,FALSE,FALSE,TRUE
 32,male,7,Instagram,Lifestyle,United States,Urban,Marketer Manager,10804,FALSE,TRUE,TRUE
 62,male,6,Instagram,Travel,United Kingdom,Rural,Student,10808,FALSE,TRUE,TRUE
-41,male,5,Facebook,Sports,Australia,Sub_Urban,Marketer Manager,10810,TRUE,TRUE,FALSE
+41,male,8,Facebook,Sports,Australia,Sub_Urban,Marketer Manager,10810,TRUE,TRUE,FALSE
 58,male,7,Facebook,Travel,United States,Sub_Urban,Software Engineer,10818,TRUE,TRUE,TRUE
 55,non-binary,6,Instagram,Travel,Australia,Rural,Marketer Manager,10823,TRUE,TRUE,FALSE
 22,female,9,Instagram,Travel,United States,Urban,Marketer Manager,10834,FALSE,TRUE,TRUE
 28,non-binary,2,Instagram,Lifestyle,United States,Urban,Marketer Manager,10838,TRUE,FALSE,FALSE
-25,male,9,Instagram,Sports,Australia,Rural,Marketer Manager,10847,FALSE,FALSE,TRUE
+25,male,8,Instagram,Sports,Australia,Rural,Marketer Manager,10847,FALSE,FALSE,TRUE
 62,male,9,Facebook,Lifestyle,United States,Rural,Marketer Manager,10858,TRUE,TRUE,FALSE
 54,male,6,Instagram,Lifestyle,United States,Urban,Student,10870,TRUE,FALSE,FALSE
 61,female,6,Instagram,Lifestyle,United States,Sub_Urban,Marketer Manager,10885,FALSE,FALSE,TRUE
 42,male,8,Facebook,Lifestyle,Australia,Sub_Urban,Student,10920,FALSE,FALSE,TRUE
 37,female,6,Instagram,Travel,United States,Sub_Urban,Software Engineer,10938,TRUE,FALSE,TRUE
-52,non-binary,9,Instagram,Sports,United Kingdom,Rural,Student,10940,FALSE,FALSE,TRUE
-36,male,7,Instagram,Sports,United Kingdom,Rural,Software Engineer,10943,FALSE,TRUE,FALSE
+52,non-binary,8,Instagram,Sports,United Kingdom,Rural,Student,10940,FALSE,FALSE,TRUE
+36,male,8,Instagram,Sports,United Kingdom,Rural,Software Engineer,10943,FALSE,TRUE,FALSE
 54,female,4,YouTube,Lifestyle,Australia,Sub_Urban,Student,10947,FALSE,FALSE,FALSE
 50,female,9,Instagram,Sports,United Kingdom,Urban,Software Engineer,10947,TRUE,FALSE,TRUE
 64,non-binary,5,Instagram,Lifestyle,Australia,Urban,Student,10964,FALSE,FALSE,FALSE
@@ -116,21 +116,21 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 56,female,7,Instagram,Lifestyle,United Kingdom,Sub_Urban,Marketer Manager,11095,TRUE,FALSE,FALSE
 53,non-binary,9,Instagram,Sports,Australia,Rural,Software Engineer,11096,FALSE,FALSE,TRUE
 45,male,7,Instagram,Lifestyle,United States,Sub_Urban,Student,11098,TRUE,FALSE,TRUE
-34,non-binary,8,Facebook,Travel,United Kingdom,Urban,Marketer Manager,11108,FALSE,FALSE,TRUE
+34,non-binary,1,Facebook,Travel,United Kingdom,Urban,Marketer Manager,11108,FALSE,FALSE,TRUE
 45,non-binary,7,Facebook,Sports,Australia,Sub_Urban,Marketer Manager,11109,FALSE,TRUE,FALSE
 42,male,9,YouTube,Travel,Australia,Urban,Software Engineer,11125,TRUE,FALSE,TRUE
 50,female,9,Facebook,Lifestyle,Australia,Sub_Urban,Software Engineer,11129,TRUE,TRUE,FALSE
 40,female,9,YouTube,Sports,Australia,Urban,Software Engineer,11129,TRUE,TRUE,TRUE
 54,male,8,Instagram,Sports,United States,Sub_Urban,Student,11132,TRUE,FALSE,FALSE
-29,female,1,Instagram,Sports,United Kingdom,Rural,Student,11164,TRUE,FALSE,TRUE
+29,female,8,Instagram,Sports,United Kingdom,Rural,Student,11164,TRUE,FALSE,TRUE
 20,female,6,YouTube,Travel,Australia,Urban,Software Engineer,11164,TRUE,TRUE,TRUE
 55,female,9,YouTube,Lifestyle,United States,Sub_Urban,Software Engineer,11174,TRUE,TRUE,TRUE
 44,female,1,Instagram,Travel,United States,Rural,Software Engineer,11176,FALSE,FALSE,TRUE
-53,non-binary,2,YouTube,Sports,Australia,Sub_Urban,Marketer Manager,11196,TRUE,TRUE,TRUE
+53,non-binary,8,YouTube,Sports,Australia,Sub_Urban,Marketer Manager,11196,TRUE,TRUE,TRUE
 62,female,5,YouTube,Lifestyle,Australia,Urban,Marketer Manager,11209,TRUE,TRUE,TRUE
 43,female,5,Instagram,Sports,Australia,Sub_Urban,Software Engineer,11211,TRUE,TRUE,FALSE
 64,non-binary,4,Facebook,Travel,United States,Rural,Software Engineer,11214,TRUE,FALSE,TRUE
-49,male,2,YouTube,Travel,United Kingdom,Rural,Marketer Manager,11220,FALSE,FALSE,FALSE
+49,male,1,YouTube,Travel,United Kingdom,Rural,Marketer Manager,11220,FALSE,FALSE,FALSE
 53,female,8,Instagram,Lifestyle,United Kingdom,Rural,Software Engineer,11221,TRUE,TRUE,TRUE
 61,female,9,YouTube,Travel,Australia,Rural,Software Engineer,11222,FALSE,FALSE,FALSE
 30,male,9,Instagram,Sports,United States,Rural,Marketer Manager,11235,TRUE,FALSE,TRUE
@@ -145,7 +145,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 64,female,9,Instagram,Lifestyle,United States,Sub_Urban,Marketer Manager,11325,FALSE,TRUE,TRUE
 62,male,5,YouTube,Sports,United Kingdom,Rural,Marketer Manager,11325,FALSE,TRUE,TRUE
 45,female,4,Instagram,Sports,United Kingdom,Urban,Marketer Manager,11353,FALSE,TRUE,TRUE
-59,male,2,Facebook,Travel,Australia,Sub_Urban,Student,11356,FALSE,TRUE,TRUE
+59,male,1,Facebook,Travel,Australia,Sub_Urban,Student,11356,FALSE,TRUE,TRUE
 47,female,9,Instagram,Lifestyle,United States,Sub_Urban,Marketer Manager,11386,TRUE,TRUE,TRUE
 57,female,4,Facebook,Lifestyle,United Kingdom,Urban,Student,11387,FALSE,TRUE,TRUE
 60,female,3,YouTube,Lifestyle,United Kingdom,Urban,Student,11392,TRUE,FALSE,FALSE
@@ -174,7 +174,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 28,male,1,Instagram,Sports,United States,Sub_Urban,Software Engineer,11582,FALSE,FALSE,FALSE
 19,non-binary,6,YouTube,Sports,United States,Rural,Marketer Manager,11600,FALSE,FALSE,TRUE
 61,male,6,Instagram,Lifestyle,United States,Rural,Student,11603,FALSE,FALSE,TRUE
-22,non-binary,8,YouTube,Travel,United Kingdom,Urban,Student,11620,TRUE,TRUE,FALSE
+22,non-binary,1,YouTube,Travel,United Kingdom,Urban,Student,11620,TRUE,TRUE,FALSE
 38,male,9,Instagram,Lifestyle,Australia,Sub_Urban,Student,11645,TRUE,TRUE,TRUE
 30,non-binary,9,Instagram,Lifestyle,United States,Sub_Urban,Marketer Manager,11649,FALSE,TRUE,FALSE
 53,male,9,YouTube,Sports,United States,Urban,Software Engineer,11658,FALSE,FALSE,TRUE
@@ -185,13 +185,13 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 43,male,4,Instagram,Lifestyle,Australia,Urban,Software Engineer,11737,TRUE,FALSE,TRUE
 19,male,8,Instagram,Travel,United Kingdom,Rural,Software Engineer,11752,FALSE,TRUE,FALSE
 49,male,4,Facebook,Sports,United States,Urban,Software Engineer,11770,FALSE,FALSE,TRUE
-43,female,2,Instagram,Sports,United States,Rural,Software Engineer,11777,TRUE,FALSE,TRUE
-34,male,9,Instagram,Sports,Australia,Rural,Marketer Manager,11777,FALSE,FALSE,TRUE
-60,non-binary,8,YouTube,Travel,Australia,Urban,Student,11779,FALSE,FALSE,FALSE
+43,female,8,Instagram,Sports,United States,Rural,Software Engineer,11777,TRUE,FALSE,TRUE
+34,male,8,Instagram,Sports,Australia,Rural,Marketer Manager,11777,FALSE,FALSE,TRUE
+60,non-binary,2,YouTube,Travel,Australia,Urban,Student,11779,FALSE,FALSE,FALSE
 36,female,8,Instagram,Lifestyle,United Kingdom,Rural,Student,11781,TRUE,TRUE,FALSE
 23,non-binary,8,Instagram,Sports,Australia,Sub_Urban,Software Engineer,11782,TRUE,TRUE,FALSE
 52,non-binary,8,Instagram,Lifestyle,United Kingdom,Sub_Urban,Marketer Manager,11790,TRUE,FALSE,TRUE
-64,female,1,YouTube,Sports,United States,Rural,Software Engineer,11794,FALSE,TRUE,TRUE
+64,female,8,YouTube,Sports,United States,Rural,Software Engineer,11794,FALSE,TRUE,TRUE
 54,female,8,Instagram,Travel,Australia,Rural,Marketer Manager,11823,FALSE,TRUE,TRUE
 27,female,5,Facebook,Travel,United Kingdom,Sub_Urban,Student,11823,FALSE,TRUE,TRUE
 38,non-binary,7,YouTube,Lifestyle,Australia,Sub_Urban,Student,11824,FALSE,TRUE,FALSE
@@ -207,10 +207,10 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 57,female,8,Instagram,Lifestyle,United Kingdom,Urban,Software Engineer,11928,FALSE,TRUE,FALSE
 61,male,8,YouTube,Lifestyle,United States,Urban,Software Engineer,11946,FALSE,TRUE,FALSE
 48,female,8,YouTube,Sports,Australia,Rural,Software Engineer,11951,FALSE,FALSE,TRUE
-62,non-binary,7,YouTube,Sports,Australia,Rural,Software Engineer,11982,FALSE,FALSE,FALSE
-26,female,4,Instagram,Sports,United Kingdom,Sub_Urban,Software Engineer,11986,TRUE,FALSE,FALSE
-62,non-binary,5,Facebook,Sports,United States,Sub_Urban,Marketer Manager,12000,FALSE,FALSE,TRUE
-21,non-binary,6,Facebook,Sports,United States,Sub_Urban,Marketer Manager,12001,TRUE,TRUE,FALSE
+62,non-binary,8,YouTube,Sports,Australia,Rural,Software Engineer,11982,FALSE,FALSE,FALSE
+26,female,8,Instagram,Sports,United Kingdom,Sub_Urban,Software Engineer,11986,TRUE,FALSE,FALSE
+62,non-binary,8,Facebook,Sports,United States,Sub_Urban,Marketer Manager,12000,FALSE,FALSE,TRUE
+21,non-binary,8,Facebook,Sports,United States,Sub_Urban,Marketer Manager,12001,TRUE,TRUE,FALSE
 59,female,6,Instagram,Sports,Australia,Sub_Urban,Student,12013,TRUE,TRUE,FALSE
 29,female,8,Facebook,Sports,United States,Rural,Student,12017,FALSE,FALSE,TRUE
 51,non-binary,8,Instagram,Travel,Australia,Sub_Urban,Marketer Manager,12024,TRUE,FALSE,TRUE
@@ -218,8 +218,8 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 29,female,8,Facebook,Travel,Australia,Sub_Urban,Software Engineer,12040,FALSE,TRUE,FALSE
 19,non-binary,5,Facebook,Travel,Australia,Rural,Marketer Manager,12063,FALSE,FALSE,TRUE
 33,male,1,Instagram,Sports,United Kingdom,Sub_Urban,Software Engineer,12072,TRUE,FALSE,FALSE
-23,female,7,Facebook,Travel,United States,Urban,Student,12073,FALSE,FALSE,FALSE
-46,non-binary,2,YouTube,Travel,United States,Urban,Student,12073,TRUE,TRUE,FALSE
+23,female,1,Facebook,Travel,United States,Urban,Student,12073,FALSE,FALSE,FALSE
+46,non-binary,1,YouTube,Travel,United States,Urban,Student,12073,TRUE,TRUE,FALSE
 29,male,8,YouTube,Sports,United States,Sub_Urban,Student,12076,FALSE,FALSE,TRUE
 58,non-binary,8,YouTube,Travel,United States,Urban,Marketer Manager,12083,TRUE,FALSE,TRUE
 30,male,8,Facebook,Lifestyle,United States,Rural,Student,12096,FALSE,FALSE,TRUE
@@ -239,7 +239,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 38,male,6,Facebook,Lifestyle,United Kingdom,Sub_Urban,Marketer Manager,12251,FALSE,TRUE,FALSE
 32,female,6,Instagram,Sports,Australia,Sub_Urban,Software Engineer,12251,FALSE,TRUE,FALSE
 19,non-binary,5,Instagram,Lifestyle,United States,Rural,Marketer Manager,12262,FALSE,FALSE,FALSE
-33,male,8,YouTube,Travel,United Kingdom,Urban,Software Engineer,12263,FALSE,FALSE,TRUE
+33,male,1,YouTube,Travel,United Kingdom,Urban,Software Engineer,12263,FALSE,FALSE,TRUE
 43,non-binary,8,YouTube,Lifestyle,United Kingdom,Urban,Marketer Manager,12269,TRUE,FALSE,FALSE
 23,female,8,Instagram,Lifestyle,United Kingdom,Urban,Software Engineer,12283,FALSE,FALSE,TRUE
 19,non-binary,7,Facebook,Sports,Australia,Urban,Software Engineer,12302,FALSE,TRUE,TRUE
@@ -259,23 +259,23 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 49,female,3,Facebook,Sports,United States,Urban,Marketer Manager,12486,FALSE,FALSE,FALSE
 60,non-binary,5,Instagram,Travel,United Kingdom,Urban,Student,12500,FALSE,TRUE,FALSE
 29,male,7,YouTube,Travel,United Kingdom,Rural,Marketer Manager,12509,TRUE,FALSE,TRUE
-45,non-binary,1,YouTube,Sports,United Kingdom,Urban,Marketer Manager,12510,TRUE,TRUE,TRUE
-47,non-binary,7,Facebook,Sports,United Kingdom,Sub_Urban,Marketer Manager,12513,TRUE,FALSE,TRUE
+45,non-binary,8,YouTube,Sports,United Kingdom,Urban,Marketer Manager,12510,TRUE,TRUE,TRUE
+47,non-binary,8,Facebook,Sports,United Kingdom,Sub_Urban,Marketer Manager,12513,TRUE,FALSE,TRUE
 39,non-binary,7,YouTube,Travel,Australia,Sub_Urban,Student,12513,TRUE,TRUE,FALSE
 48,male,7,Facebook,Travel,United States,Rural,Marketer Manager,12523,FALSE,TRUE,FALSE
 37,female,7,YouTube,Travel,Australia,Rural,Marketer Manager,12542,FALSE,TRUE,TRUE
 46,non-binary,5,YouTube,Travel,Australia,Urban,Software Engineer,12544,TRUE,FALSE,TRUE
 27,non-binary,9,Instagram,Travel,United States,Rural,Software Engineer,12553,TRUE,TRUE,TRUE
-25,male,1,Instagram,Sports,United Kingdom,Rural,Marketer Manager,12555,FALSE,TRUE,TRUE
-58,female,3,YouTube,Travel,Australia,Rural,Software Engineer,12568,FALSE,TRUE,TRUE
+25,male,8,Instagram,Sports,United Kingdom,Rural,Marketer Manager,12555,FALSE,TRUE,TRUE
+58,female,1,YouTube,Travel,Australia,Rural,Software Engineer,12568,FALSE,TRUE,TRUE
 34,non-binary,4,Facebook,Lifestyle,United States,Urban,Student,12642,TRUE,TRUE,FALSE
 64,non-binary,7,Instagram,Lifestyle,Australia,Sub_Urban,Software Engineer,12658,TRUE,TRUE,FALSE
 40,non-binary,3,Facebook,Lifestyle,United Kingdom,Sub_Urban,Software Engineer,12665,TRUE,FALSE,TRUE
 32,male,6,Facebook,Lifestyle,Australia,Rural,Software Engineer,12681,FALSE,FALSE,TRUE
-57,female,8,Facebook,Travel,United Kingdom,Urban,Marketer Manager,12686,TRUE,TRUE,TRUE
+57,female,1,Facebook,Travel,United Kingdom,Urban,Marketer Manager,12686,TRUE,TRUE,TRUE
 50,female,3,Instagram,Lifestyle,United States,Sub_Urban,Software Engineer,12705,TRUE,FALSE,FALSE
 40,non-binary,7,YouTube,Travel,United Kingdom,Rural,Software Engineer,12711,TRUE,FALSE,FALSE
-39,female,7,YouTube,Travel,Australia,Sub_Urban,Software Engineer,12722,FALSE,TRUE,FALSE
+39,female,1,YouTube,Travel,Australia,Sub_Urban,Software Engineer,12722,FALSE,TRUE,FALSE
 39,female,7,Instagram,Travel,Australia,Urban,Marketer Manager,12722,FALSE,TRUE,FALSE
 52,non-binary,7,YouTube,Lifestyle,Australia,Urban,Software Engineer,12739,FALSE,FALSE,FALSE
 24,male,9,Facebook,Lifestyle,United Kingdom,Urban,Marketer Manager,12744,TRUE,TRUE,FALSE
@@ -284,7 +284,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 53,non-binary,2,Instagram,Lifestyle,United States,Sub_Urban,Student,12786,TRUE,FALSE,FALSE
 31,female,2,YouTube,Travel,Australia,Urban,Marketer Manager,12800,FALSE,FALSE,FALSE
 64,male,4,Instagram,Sports,United Kingdom,Urban,Marketer Manager,12823,FALSE,FALSE,TRUE
-26,male,9,Facebook,Travel,Australia,Rural,Software Engineer,12824,FALSE,FALSE,FALSE
+26,male,1,Facebook,Travel,Australia,Rural,Software Engineer,12824,FALSE,FALSE,FALSE
 45,male,5,Instagram,Lifestyle,United Kingdom,Rural,Marketer Manager,12850,TRUE,FALSE,FALSE
 52,female,8,Instagram,Sports,United States,Sub_Urban,Student,12860,TRUE,TRUE,TRUE
 45,male,7,Facebook,Sports,United States,Urban,Marketer Manager,12868,FALSE,TRUE,FALSE
@@ -299,7 +299,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 20,male,6,Instagram,Lifestyle,United Kingdom,Sub_Urban,Software Engineer,12944,TRUE,FALSE,FALSE
 52,female,4,YouTube,Lifestyle,Australia,Urban,Marketer Manager,12970,FALSE,FALSE,TRUE
 47,female,4,YouTube,Travel,Australia,Rural,Software Engineer,12971,TRUE,TRUE,FALSE
-48,non-binary,5,YouTube,Travel,United States,Sub_Urban,Marketer Manager,12972,TRUE,TRUE,FALSE
+48,non-binary,1,YouTube,Travel,United States,Sub_Urban,Marketer Manager,12972,TRUE,TRUE,FALSE
 54,male,2,Facebook,Sports,Australia,Sub_Urban,Software Engineer,12975,FALSE,TRUE,TRUE
 39,non-binary,7,Facebook,Lifestyle,United Kingdom,Urban,Student,12976,FALSE,TRUE,FALSE
 64,non-binary,4,Facebook,Sports,United States,Sub_Urban,Student,12983,FALSE,FALSE,FALSE
@@ -323,7 +323,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 23,male,6,YouTube,Sports,Australia,Sub_Urban,Marketer Manager,13174,FALSE,FALSE,TRUE
 45,non-binary,1,YouTube,Lifestyle,United Kingdom,Rural,Software Engineer,13185,TRUE,TRUE,FALSE
 23,non-binary,6,YouTube,Travel,United States,Urban,Software Engineer,13201,FALSE,TRUE,TRUE
-42,non-binary,6,YouTube,Travel,United States,Urban,Marketer Manager,13215,TRUE,FALSE,TRUE
+42,non-binary,1,YouTube,Travel,United States,Urban,Marketer Manager,13215,TRUE,FALSE,TRUE
 52,non-binary,6,YouTube,Travel,Australia,Rural,Software Engineer,13229,FALSE,FALSE,TRUE
 62,non-binary,2,Instagram,Lifestyle,Australia,Sub_Urban,Software Engineer,13232,FALSE,FALSE,FALSE
 64,non-binary,4,Facebook,Lifestyle,United Kingdom,Urban,Marketer Manager,13237,TRUE,TRUE,FALSE
@@ -331,8 +331,8 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 35,male,3,Instagram,Travel,Australia,Rural,Software Engineer,13253,FALSE,FALSE,FALSE
 49,non-binary,5,YouTube,Travel,United States,Urban,Software Engineer,13257,FALSE,FALSE,TRUE
 32,male,8,Instagram,Sports,Australia,Sub_Urban,Marketer Manager,13258,FALSE,FALSE,FALSE
-41,non-binary,1,YouTube,Sports,United States,Rural,Software Engineer,13259,FALSE,TRUE,TRUE
-43,male,7,Facebook,Sports,Australia,Rural,Student,13281,FALSE,FALSE,FALSE
+41,non-binary,8,YouTube,Sports,United States,Rural,Software Engineer,13259,FALSE,TRUE,TRUE
+43,male,8,Facebook,Sports,Australia,Rural,Student,13281,FALSE,FALSE,FALSE
 19,non-binary,9,YouTube,Lifestyle,United States,Sub_Urban,Software Engineer,13285,TRUE,FALSE,FALSE
 19,female,3,YouTube,Travel,United States,Rural,Software Engineer,13293,TRUE,TRUE,TRUE
 43,non-binary,4,Facebook,Travel,Australia,Sub_Urban,Student,13306,TRUE,FALSE,FALSE
@@ -349,7 +349,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 61,male,3,Instagram,Travel,United States,Rural,Marketer Manager,13483,FALSE,TRUE,FALSE
 29,non-binary,6,Instagram,Lifestyle,United States,Sub_Urban,Software Engineer,13513,FALSE,TRUE,FALSE
 48,male,6,YouTube,Sports,United States,Rural,Software Engineer,13543,TRUE,FALSE,FALSE
-21,female,6,Instagram,Travel,United Kingdom,Urban,Software Engineer,13549,TRUE,FALSE,TRUE
+21,female,1,Instagram,Travel,United Kingdom,Urban,Software Engineer,13549,TRUE,FALSE,TRUE
 32,non-binary,6,Facebook,Lifestyle,United Kingdom,Urban,Student,13551,FALSE,TRUE,TRUE
 39,female,6,Instagram,Travel,United States,Sub_Urban,Student,13554,TRUE,FALSE,TRUE
 61,male,8,YouTube,Travel,United States,Sub_Urban,Software Engineer,13566,FALSE,TRUE,FALSE
@@ -371,14 +371,14 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 59,non-binary,3,YouTube,Travel,United States,Sub_Urban,Marketer Manager,13737,FALSE,TRUE,TRUE
 57,female,7,Facebook,Lifestyle,United States,Sub_Urban,Software Engineer,13749,FALSE,TRUE,FALSE
 23,non-binary,2,Facebook,Sports,United States,Urban,Marketer Manager,13758,FALSE,FALSE,FALSE
-29,female,5,Facebook,Sports,Australia,Urban,Software Engineer,13766,FALSE,FALSE,FALSE
+29,female,8,Facebook,Sports,Australia,Urban,Software Engineer,13766,FALSE,FALSE,FALSE
 34,non-binary,3,YouTube,Lifestyle,Australia,Urban,Student,13771,FALSE,TRUE,FALSE
-64,male,6,Facebook,Sports,United States,Urban,Student,13782,FALSE,FALSE,TRUE
-44,non-binary,6,YouTube,Sports,United States,Sub_Urban,Software Engineer,13787,TRUE,TRUE,TRUE
+64,male,8,Facebook,Sports,United States,Urban,Student,13782,FALSE,FALSE,TRUE
+44,non-binary,8,YouTube,Sports,United States,Sub_Urban,Software Engineer,13787,TRUE,TRUE,TRUE
 41,male,6,YouTube,Lifestyle,United Kingdom,Rural,Software Engineer,13793,TRUE,TRUE,FALSE
 45,female,6,Facebook,Travel,United Kingdom,Rural,Software Engineer,13799,TRUE,TRUE,TRUE
 59,male,6,Facebook,Lifestyle,United States,Urban,Software Engineer,13803,FALSE,TRUE,TRUE
-34,non-binary,2,Facebook,Sports,United Kingdom,Urban,Student,13815,FALSE,TRUE,FALSE
+34,non-binary,8,Facebook,Sports,United Kingdom,Urban,Student,13815,FALSE,TRUE,FALSE
 40,female,4,Instagram,Lifestyle,Australia,Rural,Student,13845,FALSE,FALSE,TRUE
 48,non-binary,7,Instagram,Travel,Australia,Rural,Student,13845,TRUE,TRUE,TRUE
 42,non-binary,1,Facebook,Sports,United States,Urban,Software Engineer,13862,TRUE,TRUE,FALSE
@@ -419,11 +419,11 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 41,female,3,YouTube,Lifestyle,United States,Urban,Marketer Manager,14210,FALSE,FALSE,FALSE
 25,male,6,YouTube,Sports,Australia,Urban,Marketer Manager,14213,TRUE,TRUE,FALSE
 47,male,4,Facebook,Sports,United Kingdom,Sub_Urban,Marketer Manager,14224,TRUE,FALSE,TRUE
-46,male,2,Facebook,Sports,United States,Urban,Software Engineer,14228,TRUE,FALSE,TRUE
+46,male,8,Facebook,Sports,United States,Urban,Software Engineer,14228,TRUE,FALSE,TRUE
 56,female,4,YouTube,Travel,United States,Urban,Software Engineer,14232,FALSE,FALSE,TRUE
 56,non-binary,9,YouTube,Travel,United States,Sub_Urban,Student,14235,TRUE,FALSE,TRUE
 61,male,7,Facebook,Lifestyle,United Kingdom,Sub_Urban,Software Engineer,14241,TRUE,FALSE,FALSE
-23,male,5,YouTube,Sports,United States,Rural,Student,14259,FALSE,TRUE,TRUE
+23,male,8,YouTube,Sports,United States,Rural,Student,14259,FALSE,TRUE,TRUE
 30,female,5,Instagram,Travel,United States,Urban,Marketer Manager,14264,TRUE,FALSE,TRUE
 20,female,5,Instagram,Travel,United Kingdom,Urban,Marketer Manager,14271,TRUE,TRUE,TRUE
 37,female,5,YouTube,Lifestyle,United States,Rural,Student,14284,TRUE,FALSE,TRUE
@@ -440,7 +440,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 50,female,7,Instagram,Lifestyle,United Kingdom,Sub_Urban,Marketer Manager,14378,FALSE,TRUE,FALSE
 51,female,8,Facebook,Sports,United Kingdom,Sub_Urban,Student,14381,TRUE,FALSE,FALSE
 19,female,7,Facebook,Travel,Australia,Sub_Urban,Marketer Manager,14402,TRUE,FALSE,FALSE
-53,non-binary,6,Instagram,Sports,United States,Rural,Marketer Manager,14415,FALSE,FALSE,TRUE
+53,non-binary,8,Instagram,Sports,United States,Rural,Marketer Manager,14415,FALSE,FALSE,TRUE
 47,non-binary,6,Facebook,Travel,Australia,Sub_Urban,Marketer Manager,14419,TRUE,FALSE,TRUE
 26,male,3,Instagram,Travel,Australia,Rural,Student,14423,TRUE,FALSE,TRUE
 33,female,8,Instagram,Lifestyle,United States,Urban,Software Engineer,14433,FALSE,TRUE,TRUE
@@ -452,11 +452,11 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 30,non-binary,8,Facebook,Sports,United Kingdom,Rural,Student,14491,TRUE,FALSE,FALSE
 46,female,4,YouTube,Travel,Australia,Rural,Software Engineer,14492,TRUE,FALSE,TRUE
 18,male,3,Instagram,Sports,United States,Urban,Software Engineer,14498,FALSE,FALSE,FALSE
-52,male,8,Instagram,Sports,United Kingdom,Sub_Urban,Software Engineer,14507,FALSE,FALSE,TRUE
+52,male,9,Instagram,Sports,United Kingdom,Sub_Urban,Software Engineer,14507,FALSE,FALSE,TRUE
 64,female,3,Instagram,Travel,Australia,Rural,Student,14532,FALSE,TRUE,FALSE
-56,male,1,YouTube,Sports,United Kingdom,Urban,Marketer Manager,14534,TRUE,FALSE,FALSE
+56,male,9,YouTube,Sports,United Kingdom,Urban,Marketer Manager,14534,TRUE,FALSE,FALSE
 62,non-binary,3,Facebook,Sports,United States,Sub_Urban,Student,14541,FALSE,FALSE,FALSE
-45,male,4,Instagram,Sports,United Kingdom,Rural,Student,14550,FALSE,FALSE,TRUE
+45,male,9,Instagram,Sports,United Kingdom,Rural,Student,14550,FALSE,FALSE,TRUE
 35,female,6,Facebook,Sports,United States,Sub_Urban,Software Engineer,14551,TRUE,TRUE,FALSE
 25,male,1,Instagram,Lifestyle,Australia,Urban,Software Engineer,14566,FALSE,TRUE,TRUE
 25,female,5,Instagram,Travel,United States,Rural,Marketer Manager,14569,TRUE,TRUE,FALSE
@@ -467,15 +467,15 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 63,non-binary,6,Facebook,Lifestyle,United Kingdom,Sub_Urban,Software Engineer,14615,TRUE,TRUE,FALSE
 33,female,9,Instagram,Lifestyle,United States,Rural,Marketer Manager,14619,FALSE,FALSE,FALSE
 43,non-binary,9,YouTube,Travel,United Kingdom,Sub_Urban,Marketer Manager,14631,TRUE,TRUE,TRUE
-46,non-binary,3,Facebook,Sports,Australia,Sub_Urban,Software Engineer,14636,FALSE,TRUE,FALSE
-35,male,6,Instagram,Sports,Australia,Rural,Student,14651,FALSE,FALSE,TRUE
+46,non-binary,8,Facebook,Sports,Australia,Sub_Urban,Software Engineer,14636,FALSE,TRUE,FALSE
+35,male,8,Instagram,Sports,Australia,Rural,Student,14651,FALSE,FALSE,TRUE
 33,non-binary,6,YouTube,Travel,Australia,Urban,Software Engineer,14652,TRUE,TRUE,TRUE
 23,female,6,Instagram,Travel,United States,Rural,Student,14655,FALSE,FALSE,TRUE
 51,female,2,YouTube,Travel,United Kingdom,Urban,Marketer Manager,14656,FALSE,FALSE,TRUE
 28,female,9,Facebook,Travel,Australia,Sub_Urban,Software Engineer,14662,FALSE,TRUE,TRUE
-21,non-binary,7,Instagram,Sports,United States,Sub_Urban,Marketer Manager,14674,TRUE,TRUE,FALSE
-34,male,9,Instagram,Sports,Australia,Rural,Software Engineer,14675,TRUE,TRUE,TRUE
-45,non-binary,1,Instagram,Sports,United States,Rural,Marketer Manager,14698,FALSE,FALSE,FALSE
+21,non-binary,8,Instagram,Sports,United States,Sub_Urban,Marketer Manager,14674,TRUE,TRUE,FALSE
+34,male,8,Instagram,Sports,Australia,Rural,Software Engineer,14675,TRUE,TRUE,TRUE
+45,non-binary,8,Instagram,Sports,United States,Rural,Marketer Manager,14698,FALSE,FALSE,FALSE
 54,male,2,Instagram,Lifestyle,United States,Rural,Software Engineer,14700,FALSE,FALSE,TRUE
 52,non-binary,8,Facebook,Sports,Australia,Sub_Urban,Marketer Manager,14709,FALSE,FALSE,FALSE
 33,female,5,Facebook,Sports,Australia,Urban,Marketer Manager,14710,FALSE,TRUE,TRUE
@@ -511,8 +511,8 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 41,female,6,Instagram,Sports,Australia,Rural,Software Engineer,14987,FALSE,FALSE,TRUE
 23,non-binary,4,Instagram,Travel,Australia,Urban,Software Engineer,15002,TRUE,FALSE,FALSE
 61,female,9,Instagram,Travel,Australia,Rural,Student,15009,FALSE,FALSE,FALSE
-22,male,4,YouTube,Sports,United Kingdom,Rural,Marketer Manager,15016,TRUE,TRUE,TRUE
-45,female,7,Instagram,Sports,United Kingdom,Urban,Software Engineer,15021,TRUE,TRUE,FALSE
+22,male,9,YouTube,Sports,United Kingdom,Rural,Marketer Manager,15016,TRUE,TRUE,TRUE
+45,female,9,Instagram,Sports,United Kingdom,Urban,Software Engineer,15021,TRUE,TRUE,FALSE
 18,male,2,Instagram,Lifestyle,United Kingdom,Sub_Urban,Software Engineer,15024,TRUE,TRUE,TRUE
 43,male,7,Facebook,Lifestyle,United States,Urban,Student,15057,FALSE,FALSE,FALSE
 29,male,3,Facebook,Travel,United Kingdom,Urban,Marketer Manager,15057,FALSE,TRUE,FALSE
@@ -538,7 +538,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 43,non-binary,1,Facebook,Lifestyle,United Kingdom,Urban,Software Engineer,15218,TRUE,TRUE,TRUE
 49,female,7,Instagram,Sports,United States,Urban,Student,15231,FALSE,FALSE,TRUE
 35,male,9,Instagram,Sports,United States,Urban,Student,15246,FALSE,TRUE,FALSE
-38,female,5,YouTube,Sports,United States,Sub_Urban,Software Engineer,15249,TRUE,FALSE,TRUE
+38,female,9,YouTube,Sports,United States,Sub_Urban,Software Engineer,15249,TRUE,FALSE,TRUE
 51,non-binary,3,YouTube,Lifestyle,Australia,Sub_Urban,Marketer Manager,15275,TRUE,TRUE,FALSE
 47,male,7,Facebook,Travel,United States,Urban,Student,15316,TRUE,FALSE,TRUE
 54,non-binary,9,YouTube,Lifestyle,United States,Urban,Marketer Manager,15317,TRUE,FALSE,FALSE
@@ -546,10 +546,10 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 21,non-binary,4,Facebook,Lifestyle,Australia,Rural,Student,15324,FALSE,FALSE,TRUE
 38,male,8,YouTube,Travel,Australia,Sub_Urban,Software Engineer,15330,TRUE,FALSE,FALSE
 62,male,6,Instagram,Travel,United Kingdom,Sub_Urban,Software Engineer,15335,FALSE,TRUE,FALSE
-62,male,7,Instagram,Sports,United Kingdom,Sub_Urban,Marketer Manager,15336,FALSE,FALSE,TRUE
+62,male,9,Instagram,Sports,United Kingdom,Sub_Urban,Marketer Manager,15336,FALSE,FALSE,TRUE
 18,non-binary,8,YouTube,Lifestyle,United Kingdom,Sub_Urban,Software Engineer,15356,TRUE,TRUE,FALSE
 39,female,7,Instagram,Travel,United States,Rural,Student,15362,FALSE,FALSE,TRUE
-32,non-binary,5,Facebook,Sports,United States,Sub_Urban,Software Engineer,15401,TRUE,TRUE,FALSE
+32,non-binary,9,Facebook,Sports,United States,Sub_Urban,Software Engineer,15401,TRUE,TRUE,FALSE
 62,male,7,Instagram,Travel,United States,Rural,Software Engineer,15402,FALSE,FALSE,TRUE
 39,non-binary,8,YouTube,Travel,United Kingdom,Urban,Marketer Manager,15419,TRUE,FALSE,TRUE
 27,non-binary,3,Facebook,Sports,United States,Rural,Student,15424,TRUE,TRUE,TRUE
@@ -563,7 +563,7 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 57,male,2,Facebook,Travel,United Kingdom,Urban,Marketer Manager,15510,TRUE,FALSE,FALSE
 30,female,4,Instagram,Travel,Australia,Sub_Urban,Student,15519,TRUE,FALSE,TRUE
 20,male,7,YouTube,Lifestyle,Australia,Rural,Marketer Manager,15522,TRUE,TRUE,TRUE
-23,male,3,YouTube,Sports,United Kingdom,Rural,Marketer Manager,15534,FALSE,TRUE,FALSE
+23,male,9,YouTube,Sports,United Kingdom,Rural,Marketer Manager,15534,FALSE,TRUE,FALSE
 36,female,9,Instagram,Travel,United States,Urban,Student,15538,FALSE,TRUE,FALSE
 22,male,9,Facebook,Sports,Australia,Urban,Student,15544,TRUE,TRUE,TRUE
 45,male,5,YouTube,Travel,United Kingdom,Rural,Software Engineer,15551,FALSE,FALSE,TRUE
@@ -612,21 +612,21 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 40,non-binary,7,YouTube,Lifestyle,Australia,Sub_Urban,Marketer Manager,16030,FALSE,FALSE,TRUE
 41,non-binary,9,Facebook,Sports,United Kingdom,Rural,Student,16033,TRUE,TRUE,FALSE
 20,male,9,Facebook,Sports,United Kingdom,Rural,Marketer Manager,16035,TRUE,TRUE,FALSE
-20,non-binary,7,Instagram,Sports,United States,Sub_Urban,Marketer Manager,16041,FALSE,FALSE,FALSE
+20,non-binary,9,Instagram,Sports,United States,Sub_Urban,Marketer Manager,16041,FALSE,FALSE,FALSE
 33,male,4,Facebook,Sports,Australia,Sub_Urban,Marketer Manager,16054,FALSE,FALSE,TRUE
 51,non-binary,2,YouTube,Sports,United States,Urban,Marketer Manager,16058,TRUE,TRUE,FALSE
 36,female,5,YouTube,Lifestyle,United Kingdom,Urban,Marketer Manager,16073,FALSE,TRUE,TRUE
 33,female,5,Facebook,Sports,Australia,Urban,Software Engineer,16085,FALSE,TRUE,TRUE
 50,male,3,Facebook,Travel,United Kingdom,Rural,Marketer Manager,16093,TRUE,TRUE,TRUE
 48,male,8,Instagram,Travel,Australia,Sub_Urban,Software Engineer,16123,TRUE,FALSE,TRUE
-29,male,8,Instagram,Sports,United Kingdom,Rural,Marketer Manager,16159,FALSE,FALSE,TRUE
+29,male,9,Instagram,Sports,United Kingdom,Rural,Marketer Manager,16159,FALSE,FALSE,TRUE
 59,female,9,YouTube,Sports,Australia,Rural,Marketer Manager,16170,FALSE,TRUE,FALSE
 32,non-binary,4,Facebook,Travel,United States,Rural,Software Engineer,16199,FALSE,FALSE,FALSE
 55,non-binary,7,YouTube,Travel,Australia,Urban,Student,16207,TRUE,FALSE,TRUE
 47,male,9,Facebook,Lifestyle,Australia,Sub_Urban,Software Engineer,16213,FALSE,TRUE,FALSE
 38,female,1,YouTube,Sports,Australia,Sub_Urban,Software Engineer,16240,TRUE,TRUE,TRUE
 38,male,9,Facebook,Sports,Australia,Urban,Marketer Manager,16261,FALSE,FALSE,TRUE
-58,male,2,Instagram,Sports,United States,Rural,Student,16269,FALSE,TRUE,TRUE
+58,male,9,Instagram,Sports,United States,Rural,Student,16269,FALSE,TRUE,TRUE
 61,female,4,YouTube,Sports,Australia,Sub_Urban,Marketer Manager,16273,TRUE,TRUE,FALSE
 19,female,8,YouTube,Travel,Australia,Rural,Student,16284,FALSE,TRUE,FALSE
 28,female,7,YouTube,Lifestyle,United Kingdom,Urban,Student,16297,TRUE,TRUE,FALSE
@@ -640,8 +640,8 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 34,male,3,Instagram,Travel,United States,Sub_Urban,Student,16404,FALSE,FALSE,TRUE
 51,non-binary,4,Facebook,Lifestyle,Australia,Sub_Urban,Student,16416,FALSE,TRUE,FALSE
 27,male,9,Instagram,Sports,United Kingdom,Rural,Marketer Manager,16452,FALSE,FALSE,TRUE
-53,male,4,YouTube,Sports,Australia,Rural,Software Engineer,16475,TRUE,TRUE,TRUE
-39,non-binary,6,Facebook,Sports,Australia,Rural,Software Engineer,16519,TRUE,TRUE,TRUE
+53,male,9,YouTube,Sports,Australia,Rural,Software Engineer,16475,TRUE,TRUE,TRUE
+39,non-binary,9,Facebook,Sports,Australia,Rural,Software Engineer,16519,TRUE,TRUE,TRUE
 49,female,8,Instagram,Lifestyle,United Kingdom,Sub_Urban,Marketer Manager,16523,TRUE,TRUE,TRUE
 32,non-binary,2,Facebook,Lifestyle,Australia,Urban,Software Engineer,16528,TRUE,FALSE,FALSE
 54,non-binary,8,YouTube,Travel,United States,Sub_Urban,Student,16533,TRUE,FALSE,TRUE
@@ -650,19 +650,19 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 51,male,5,YouTube,Travel,United Kingdom,Rural,Student,16566,FALSE,FALSE,TRUE
 29,non-binary,5,Instagram,Lifestyle,United Kingdom,Urban,Student,16571,TRUE,FALSE,FALSE
 50,male,1,Facebook,Sports,United States,Rural,Marketer Manager,16575,TRUE,TRUE,TRUE
-59,male,4,Facebook,Sports,United Kingdom,Rural,Student,16598,FALSE,FALSE,FALSE
+59,male,9,Facebook,Sports,United Kingdom,Rural,Student,16598,FALSE,FALSE,FALSE
 40,female,7,Instagram,Travel,United States,Urban,Software Engineer,16614,FALSE,FALSE,TRUE
-57,female,1,Facebook,Sports,Australia,Sub_Urban,Marketer Manager,16617,FALSE,FALSE,FALSE
+57,female,9,Facebook,Sports,Australia,Sub_Urban,Marketer Manager,16617,FALSE,FALSE,FALSE
 33,male,2,YouTube,Sports,United Kingdom,Rural,Software Engineer,16622,FALSE,FALSE,TRUE
 54,female,4,YouTube,Travel,United States,Sub_Urban,Marketer Manager,16643,TRUE,FALSE,FALSE
 33,female,7,YouTube,Travel,United Kingdom,Urban,Marketer Manager,16657,TRUE,FALSE,FALSE
 39,male,2,Instagram,Lifestyle,Australia,Rural,Marketer Manager,16683,TRUE,TRUE,FALSE
 39,male,2,Facebook,Lifestyle,United States,Rural,Marketer Manager,16694,FALSE,TRUE,TRUE
 54,female,1,Instagram,Sports,United Kingdom,Urban,Student,16697,FALSE,FALSE,TRUE
-26,male,4,YouTube,Sports,United States,Urban,Marketer Manager,16704,FALSE,TRUE,TRUE
-55,non-binary,5,Instagram,Sports,Australia,Rural,Marketer Manager,16713,TRUE,TRUE,FALSE
+26,male,9,YouTube,Sports,United States,Urban,Marketer Manager,16704,FALSE,TRUE,TRUE
+55,non-binary,9,Instagram,Sports,Australia,Rural,Marketer Manager,16713,TRUE,TRUE,FALSE
 44,female,4,YouTube,Travel,United Kingdom,Rural,Software Engineer,16719,FALSE,TRUE,FALSE
-49,female,7,Instagram,Sports,United Kingdom,Rural,Software Engineer,16720,TRUE,FALSE,TRUE
+49,female,9,Instagram,Sports,United Kingdom,Rural,Software Engineer,16720,TRUE,FALSE,TRUE
 18,male,9,Facebook,Sports,United States,Rural,Student,16732,FALSE,FALSE,FALSE
 22,non-binary,2,Facebook,Travel,Australia,Rural,Software Engineer,16749,TRUE,TRUE,TRUE
 54,non-binary,2,YouTube,Sports,Australia,Rural,Student,16789,FALSE,FALSE,TRUE
@@ -705,14 +705,14 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 47,male,2,Instagram,Sports,United Kingdom,Rural,Software Engineer,17170,FALSE,FALSE,TRUE
 64,female,7,Facebook,Travel,Australia,Urban,Marketer Manager,17173,TRUE,TRUE,TRUE
 55,non-binary,3,YouTube,Lifestyle,United States,Sub_Urban,Software Engineer,17174,TRUE,FALSE,FALSE
-61,female,4,Facebook,Sports,United States,Urban,Marketer Manager,17206,FALSE,FALSE,FALSE
+61,female,9,Facebook,Sports,United States,Urban,Marketer Manager,17206,FALSE,FALSE,FALSE
 54,male,9,YouTube,Lifestyle,United States,Urban,Marketer Manager,17210,TRUE,TRUE,FALSE
 62,female,1,Instagram,Lifestyle,Australia,Rural,Software Engineer,17225,FALSE,FALSE,TRUE
 53,female,3,Facebook,Lifestyle,United States,Urban,Student,17226,FALSE,TRUE,TRUE
 23,female,3,YouTube,Lifestyle,Australia,Sub_Urban,Marketer Manager,17246,TRUE,FALSE,FALSE
-40,female,4,Facebook,Sports,United States,Urban,Student,17259,TRUE,FALSE,TRUE
+40,female,9,Facebook,Sports,United States,Urban,Student,17259,TRUE,FALSE,TRUE
 63,female,7,Instagram,Lifestyle,United Kingdom,Urban,Marketer Manager,17262,TRUE,FALSE,FALSE
-35,female,2,YouTube,Sports,United States,Rural,Software Engineer,17265,TRUE,TRUE,FALSE
+35,female,9,YouTube,Sports,United States,Rural,Software Engineer,17265,TRUE,TRUE,FALSE
 55,female,3,Facebook,Lifestyle,United States,Urban,Student,17271,TRUE,FALSE,TRUE
 23,female,6,Facebook,Lifestyle,Australia,Urban,Software Engineer,17280,FALSE,TRUE,FALSE
 18,male,6,YouTube,Travel,United Kingdom,Urban,Software Engineer,17281,FALSE,TRUE,TRUE
@@ -735,13 +735,13 @@ age,gender,time_spent,platform,interests,location,demographics,profession,income
 24,non-binary,5,Instagram,Sports,Australia,Urban,Student,17478,TRUE,FALSE,FALSE
 18,male,6,Facebook,Sports,United Kingdom,Rural,Student,17482,TRUE,FALSE,TRUE
 37,male,9,Instagram,Travel,Australia,Sub_Urban,Software Engineer,17490,TRUE,TRUE,TRUE
-64,non-binary,8,YouTube,Sports,United States,Urban,Marketer Manager,17492,TRUE,TRUE,TRUE
-51,non-binary,3,Instagram,Sports,United Kingdom,Rural,Student,17503,TRUE,FALSE,FALSE
+64,non-binary,9,YouTube,Sports,United States,Urban,Marketer Manager,17492,TRUE,TRUE,TRUE
+51,non-binary,9,Instagram,Sports,United Kingdom,Rural,Student,17503,TRUE,FALSE,FALSE
 25,non-binary,7,Instagram,Travel,Australia,Urban,Software Engineer,17526,TRUE,TRUE,FALSE
 50,non-binary,8,Instagram,Lifestyle,United Kingdom,Rural,Student,17529,TRUE,TRUE,FALSE
 25,female,7,Instagram,Lifestyle,Australia,Rural,Student,17532,TRUE,TRUE,TRUE
 27,non-binary,5,YouTube,Travel,United Kingdom,Rural,Student,17595,TRUE,FALSE,TRUE
-22,male,6,Instagram,Sports,Australia,Urban,Student,17610,TRUE,FALSE,TRUE
+22,male,9,Instagram,Sports,Australia,Urban,Student,17610,TRUE,FALSE,TRUE
 42,non-binary,3,Instagram,Sports,United States,Urban,Software Engineer,17630,FALSE,FALSE,FALSE
 18,male,6,YouTube,Sports,Australia,Urban,Marketer Manager,17633,TRUE,TRUE,TRUE
 51,non-binary,1,Facebook,Sports,Australia,Urban,Software Engineer,17637,FALSE,TRUE,TRUE

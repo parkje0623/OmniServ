@@ -19,8 +19,8 @@
 }
 
 .first-section-data,
-.second-section,
-.third-section,
+.second-section, .second-section-data,
+.third-section, .third-section-data,
 .fourth-section {
     display: flex;
     flex-direction: row;
@@ -66,4 +66,20 @@
     border-radius: 10px;
     padding: 1rem;
     background-color: #ffffff;
+}
+
+/* Table Data */
+.table-data {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-data th,
+.table-data td {
+    text-align: center;
+    padding: 12px;
+}
+
+.first-table-data {
+    text-align: left !important;
 }
