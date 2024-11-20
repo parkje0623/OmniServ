@@ -15,6 +15,7 @@ import Profile from './pages/Profile';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Setting from './pages/Setting';
+import Coding from './pages/Coding';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/movie' element={<Movie />} />
+              <Route path='/coding' element={<Coding />} />
               <Route path='/ecomm' element={<Ecomm />} />
               <Route path='/calculator' element={<Calculator />} />
               <Route path='/profile' element={<Profile />} />

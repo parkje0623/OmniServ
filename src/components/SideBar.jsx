@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import SidebarLink from "./SideBarLink";
-import { faStar, faChartPie, faFilm, faCalculator, faCartPlus, faUser, faBolt, faArrowRight, faReply } from '@fortawesome/fontawesome-free-solid';
+import { faStar, faChartPie, faFilm, faCode, faCalculator, faCartPlus, faUser, faBolt, faArrowRight, faReply } from '@fortawesome/fontawesome-free-solid';
 import { UserContext } from "../context/UserContext";
 
 function SideBar() {
@@ -30,6 +30,9 @@ function SideBar() {
                     <SidebarLink to='/movie' icon={faFilm} label="Movie" />
                 </li>
                 <li>
+                    <SidebarLink to='/coding' icon={faCode} label="Learn Code" />
+                </li>
+                <li>
                     <SidebarLink to='/ecomm' icon={faCartPlus} label="E-Commerce" />
                 </li>
                 <li>
@@ -56,6 +59,54 @@ function SideBar() {
                         </li>
                         <li>
                             <SidebarLink to='/signup' icon={faArrowRight} label="Sign Up" />
+                        </li>
+                    </>
+                )}
+            </ul>
+
+            <ul className="sidebar-icon-content">
+                {/* About Us */}
+                <li>
+                    <SidebarLink to='/' icon={faStar} />
+                </li>
+
+                {/* Main Content */}
+                <li>
+                    <SidebarLink to='/dashboard' icon={faChartPie} />
+                </li>
+                <li>
+                    <SidebarLink to='/movie' icon={faFilm} />
+                </li>
+                <li>
+                    <SidebarLink to='/coding' icon={faCode} />
+                </li>
+                <li>
+                    <SidebarLink to='/ecomm' icon={faCartPlus} />
+                </li>
+                <li>
+                    <SidebarLink to='/calculator' icon={faCalculator} />
+                </li>
+                
+                {/* Account Content */}
+                <li className="sidebar-content-title">
+                    
+                </li>
+                <li>
+                    <SidebarLink to='/profile' icon={faUser} />
+                </li>
+                {user ? (
+                    <>
+                        <li>
+                            <SidebarLink to='/signin' icon={faReply} />
+                        </li>
+                    </>
+                ) : (
+                    <>
+                        <li>
+                            <SidebarLink to='/signin' icon={faBolt} />
+                        </li>
+                        <li>
+                            <SidebarLink to='/signup' icon={faArrowRight} />
                         </li>
                     </>
                 )}

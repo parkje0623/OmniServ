@@ -64,6 +64,16 @@ function Home() {
                 </div>
 
                 <div className="about-topic">
+                    <h4>Learn Coding (In-Progress)</h4>
+                    <p>Learning Purposes for Learn Coding:</p>
+                    <ul>
+                        <li>
+                            Learn Variety Coding Languages and Interview
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="about-topic">
                     <h4>E-Commerce (Not Ready)</h4>
                     <p>Learning Purposes for E-Commerce Page:</p>
                     <ul>
