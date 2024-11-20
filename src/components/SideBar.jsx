@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import SidebarLink from "./SideBarLink";
-import { faStar, faChartPie, faFilm, faCode, faCalculator, faCartPlus, faUser, faBolt, faArrowRight, faReply } from '@fortawesome/fontawesome-free-solid';
+import { faStar, faChartPie, faFilm, faCalculator, faCartPlus, faUser, faBolt, faArrowRight, faReply } from '@fortawesome/fontawesome-free-solid';
 import { UserContext } from "../context/UserContext";
 
 function SideBar() {
@@ -28,9 +28,6 @@ function SideBar() {
                 </li>
                 <li>
                     <SidebarLink to='/movie' icon={faFilm} label="Movie" />
-                </li>
-                <li>
-                    <SidebarLink to='/coding' icon={faCode} label="Learn Code" />
                 </li>
                 <li>
                     <SidebarLink to='/ecomm' icon={faCartPlus} label="E-Commerce" />
@@ -76,9 +73,6 @@ function SideBar() {
                 </li>
                 <li>
                     <SidebarLink to='/movie' icon={faFilm} />
-                </li>
-                <li>
-                    <SidebarLink to='/coding' icon={faCode} />
                 </li>
                 <li>
                     <SidebarLink to='/ecomm' icon={faCartPlus} />

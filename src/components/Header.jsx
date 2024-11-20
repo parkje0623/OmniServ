@@ -12,6 +12,7 @@ function Header({ path }) {
         '/calculator': '/ Calculator',
         '/profile': '/ Profile',
         '/setting': '/ Setting',
+        '/coding': '/ Coding'
     }
 
     const handleHomeClick = () => {
