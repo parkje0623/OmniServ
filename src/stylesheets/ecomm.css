@@ -135,6 +135,7 @@
     margin-bottom: 0.5rem;
 }
 
+/* Product Modal - Displayed OnClicked */
 .product-modal {
     max-height: 80vh;
     overflow-y: auto;
@@ -156,4 +157,89 @@
 }
 #product-modal-icon:hover {
     background-color: #405bf3;
+}
+
+/* Cart */
+.ecomm-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ecomm-cart-product {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+    border: 2px solid #9b9b9b;
+    border-radius: 12px;
+}
+
+.ecomm-cart-product .item {
+    width: 200px;
+    max-width: 200px;
+}
+
+.ecomm-cart-product img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.ecomm-last-item,
+.cart-total,
+.cart-total-item {
+    margin-left: auto;
+    text-align: right !important;
+}
+
+/* Qty Editing */
+.minus-btn,
+.plus-btn {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.minus-btn:hover,
+.plus-btn:hover {
+    background-color: #ddd;
+}
+.quantity {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: center;
+    min-width: 30px;
+}
+/* Removing Product */
+.ecomm-remove-product {
+    color: #db2c2c;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 12px;
+}
+.ecomm-remove-product:hover {
+    color: #a02b2b;
+    background-color: #ccc;
+}
+
+/* Sub-Total, Tax, Total */
+.cart-total {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-total-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 200px;
+}
+
+.cart-total-item .label {
+    min-width: 100px;
 }

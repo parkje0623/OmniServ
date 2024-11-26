@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { db } from "../firebase";
-import { doc, getDoc } from "firebase/firestore";
+import React, { useEffect, useState, useCallback } from "react";
+import { auth, db } from "../firebase";
+import { doc, getDoc, collection, updateDoc, increment, setDoc, getDocs, deleteDoc } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartArrowDown, faCartPlus, faSearch } from '@fortawesome/fontawesome-free-solid';
+import { faCartArrowDown, faCartPlus, faSearch, faMinus, faPlus, faTrash } from '@fortawesome/fontawesome-free-solid';
 import '../stylesheets/ecomm.css';
 import Modal from "../components/Modal";
+import { useDebounce } from "../hooks/useDebounce";
+import { ecommProductFilters } from "../utils/filters";
 
 function Ecomm() {
+    // Current User UID
+    const userId = auth.currentUser ? auth.currentUser.uid : 'guests';
     // Fixed Categories and its Components
     const categorySelection = ["Electronics", "Clothings"];
     const categoryPriceRange = {
-        "Electronics": ['Less Than $200', '$200 - $499.99', '$500 - $999.99', '$1000 & Up'],
+        "Electronics": ['Less Than $200', '$200 - $499.99', '$500 - $999.99', '$1,000 & Up'],
         "Clothings": ['Less Than $50', '$50 - $99.99', '$100 - $149.99', '$150 & Up'],
     };
 
@@ -18,14 +22,12 @@ function Ecomm() {
     const [currCategory, setCurrCategory] = useState("Electronics");
     const [productData, setProductData] = useState({});
     const [productClick, setProductClick] = useState(null);
-    const [isProductOpen, setIsProductOpen] = useState(false);
-    const [error, setError] = useState();
 
     // Variables for Filters
     const [filteredData, setFilteredData] = useState([]);
     const [sortOption, setSortOption] = useState("low-to-high");
     const [searchFilter, setSearchFilter] = useState("");
-    const [debouncedTerm, setDebouncedTerm] = useState("");
+    const debouncedTerm = useDebounce(searchFilter, 100);
     const [priceFilter, setPriceFilter] = useState([]);
     const [productType, setProductType] = useState([]);
     const [typeFilter, setTypeFilter] = useState([]);
@@ -34,114 +36,167 @@ function Ecomm() {
 
     // Variables for Cart
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [cartProducts, setCartProducts] = useState([]);
+    const [cartTotals, setCartTotals] = useState({ subtotal: 0, tax: 0, total: 0 });
 
-    // Parsing Price Range
-    const parsePriceRange = (range) => {
-        if (range.includes('Less Than')) {
-            const max = parseFloat(range.match(/\d+/)[0]);
-            return { min: 0, max };
-        } else if (range.includes('& Up')) {
-            const min = parseFloat(range.match(/\d+/)[0]);
-            return { min, max: Infinity };
-        } else {
-            const [min, max] = range.split('-').map((str) => parseFloat(str.replace(/[^\d.]/g, '')));
-            return { min, max };
-        }
-    };
-    // Handling Price Filter Checkbox onChange
-    const handlePriceFilter = (e) => {
+    // Handling Checkbox onChange
+    const handleCheckboxFilter = (e, setFilter) => {
         if (e.target.checked) {
-            setPriceFilter((prevPrices) => [...prevPrices, e.target.value]);
+            setFilter((prev) => [...prev, e.target.value]);
         } else {
-            setPriceFilter((prevPrices) => prevPrices.filter((b) => b !== e.target.value));
+            setFilter((prev) => prev.filter((b) => b !== e.target.value));
         }
-    };
-    // Handling Brand Filter Checkbox onChange
-    const handleBrandFilter = (e) => {
-        if (e.target.checked) {
-            setBrandFilter((prevBrands) => [...prevBrands, e.target.value]);
-        } else {
-            setBrandFilter((prevBrands) => prevBrands.filter((b) => b !== e.target.value));
-        }
-    };
-    // Handling Type Filter Checkbox onChange
-    const handleTypeFilter = (e) => {
-        if (e.target.checked) {
-            setTypeFilter((prevTypes) => [...prevTypes, e.target.value]);
-        } else {
-            setTypeFilter((prevTypes) => prevTypes.filter((b) => b !== e.target.value));
-        }
-    };
-
-    // Handling Closing Move Details
-    const handleCloseProduct = () => {
-        setIsProductOpen(false);
-        setProductClick(null);
-    };
+    }
 
     // Handling Add Product to Cart
-    const handleAddCart = (product) => {
-        
+    const handleAddCart = async (product) => {
+        try {
+            if (userId) {
+                const cartCollectionRef = collection(db, `users/${userId}/cart`);
+                const existingProductQuery = doc(cartCollectionRef, product.SKU);
+                const existingProductSnapshot = await getDoc(existingProductQuery);
+                
+                if (existingProductSnapshot.exists()) {
+                    // Increment quantity if item exists
+                    await updateDoc(existingProductQuery, {
+                        quantity: increment(product.quantity || 1)
+                    });
+                    console.log("Product Quantity updated in cart.");
+                } else {
+                    // Add new item if it doesn't exist
+                    const newProduct = { name: product.name, price: product.price, SKU: product.SKU, quantity: 1 }
+                    await setDoc(existingProductQuery, newProduct);
+                    console.log("New Product added to cart.");
+                }
+            }
+        } catch (error) {
+            console.error("Error Adding Product to Cart: ", error);
+        }
     };
     // Handling Cart onClick
-    const handleCartClick = () => {
+    const handleCartClick = async () => {
         setIsCartOpen(true);
         setCurrCategory("");
 
         try {
-            console.log("Fetch Cart Data");
+            if (userId) {
+                const cartCollectionRef = collection(db, `users/${userId}/cart`);
+                const productSnapshot = await getDocs(cartCollectionRef);
+                const cartProducts = productSnapshot.docs.map((doc) => ({
+                    ...doc.data()
+                }));
+                setCartProducts(cartProducts);
+
+                const subTotal = cartProducts.reduce((sum, item) => sum + parseFloat(item.price * item.quantity || 0), 0);
+                const tax = subTotal * 0.12;
+                const total = subTotal + tax;
+                setCartTotals({
+                    subtotal: subTotal,
+                    tax: tax,
+                    total: total
+                });
+                console.log("Cart Products Fetched Successfully!");
+            }
         } catch (error) {
             console.error("Error Fetching User's Cart: ", error);
-            setError(error);
+        }
+    };
+    // Handling Product Remove onClick
+    const handleRemoveProduct = async (productSKU) => {
+        try {
+            if (userId) {
+                const productRef = doc(db, `users/${userId}/cart`, productSKU);
+                await deleteDoc(productRef);
+                handleCartClick();
+                console.log("Cart Products Removed Successfully!");
+            }
+        } catch (error) {
+            console.error("Error Removing a product from the Cart: ", error);
+        }
+    };
+    // Handling Product Quantity Change
+    const handleQtyChange = async (productSKU, change) => {
+        try {
+            if (userId) {
+                const productRef = doc(db, `users/${userId}/cart`, productSKU);
+                const productDoc = await getDoc(productRef); 
+
+                if (productDoc.exists()) {
+                    const currentQuantity = productDoc.data().quantity;  
+                    if (change === "plus") {
+                        await updateDoc(productRef, {
+                            quantity: increment(1)
+                        });
+                    } else if (change === "minus" && currentQuantity > 1) {
+                        await updateDoc(productRef, {
+                            quantity: increment(-1)
+                        });
+                    }
+
+                    console.log("Cart Product Quantity Changed Successfully!");
+                    handleCartClick();
+                } else {
+                    console.log("Product does not exist in cart");
+                }
+            }
+        } catch (error) {
+            console.error("Error Changing Quantity: ", error);
         }
     };
 
-    // Debounced Search Term - To not search too oftern (while user is still typing)
-    useEffect(() => {
-        const handler = setTimeout(() => setDebouncedTerm(searchFilter), 100);
-        return () => clearTimeout(handler); // Clear debounce timeout
-    }, [searchFilter]);
+    // Clear Cart (Only for Guests) on Exit page
+    const clearCartOnExit = useCallback(async () => {
+        if (userId === 'guests') {
+            const cartCollectionRef = collection(db, `users/${userId}/cart`);
+            const cartSnapshot = await getDocs(cartCollectionRef);
 
-    // Apply Other Filters
+            // Remove all products from the cart
+            const deletePromises = cartSnapshot.docs.map(doc => deleteDoc(doc.ref));
+            await Promise.all(deletePromises); // Wait for all deletes to finish
+            console.log("Cart cleared on exit!");
+        }
+    }, [userId]);
+    // beforeunload: handles the user on exit
+    useEffect(() => {
+        const handleUnload = () => {
+            // Use localStorage to store the "clear cart" flag
+            if (userId === 'guests') {
+                localStorage.setItem('clearCart', 'true');
+            }
+        };
+        window.addEventListener('beforeunload', handleUnload);
+    
+        if (localStorage.getItem('clearCart') === 'true') {
+            clearCartOnExit(); 
+            localStorage.removeItem('clearCart'); 
+        }
+        return () => window.removeEventListener('beforeunload', handleUnload);
+    }, [userId, clearCartOnExit]);
+
+    // Handling Filters
     useEffect(() => {
         let filtered = Object.values(productData).flat();
-        
         // Apply Search Here
         if (debouncedTerm) {
             filtered = filtered.filter((product) => 
                 product.name.toLowerCase().includes(debouncedTerm.toLowerCase())
             );
         }
-
-        // Combine products across all categories for sorting (low-to-high or high-to-low)
-        filtered.sort((a, b) => {
-            if (sortOption === "low-to-high") {
-                return a.price - b.price;
-            } else if (sortOption === "high-to-low") {
-                return b.price - a.price;
+        // Apply other Filters
+        filtered = ecommProductFilters(
+            filtered,
+            { 
+                searchTerm: debouncedTerm, 
+                priceRanges: priceFilter, 
+                brandFilter, 
+                typeFilter, 
+                sortOption 
             }
-            return 0;
-        });
-
-        // Apply Price Filter Here
-        if (priceFilter.length > 0) {
-            const parsedRanges = priceFilter.map((range) => parsePriceRange(range));
-            filtered = filtered.filter((product) =>
-                parsedRanges.some(({ min, max }) => product.price >= min && product.price <= max)
-            );
-        }
-        // Apply Brand Filter Here
-        if (brandFilter.length > 0) {
-            filtered = filtered.filter((product) => brandFilter.includes(product.brand));
-        }
-        // Apply Type Filter Here
-        if (typeFilter.length > 0) {
-            filtered = filtered.filter((product) => typeFilter.includes(product.type));
-        }
-
+        );
         setFilteredData(filtered);
     }, [productData, debouncedTerm, sortOption, priceFilter, brandFilter, typeFilter]);
 
+    // Fetch Products Depends on the Current Category
     useEffect(() => {
         async function fetchProducts() {
             try {
@@ -156,7 +211,6 @@ function Ecomm() {
                 setProductBrand([...new Set(Object.values(productData).flat().map(product => product.brand))]);
             } catch (error) {
                 console.error("Error Fetching Products: ", error);
-                setError("Products Cannot be Retrived, Please Try Again later.");
             }
         }
 
@@ -185,7 +239,7 @@ function Ecomm() {
                     ))}
                 </div>
                 
-                {!isCartOpen &&
+                {!isCartOpen && 
                     <div className="ecomm-option-header">
                         <div className="display-order-selector">
                             <label htmlFor="display-option">Sort </label>
@@ -212,7 +266,7 @@ function Ecomm() {
                 }
             </div>
 
-            {!isCartOpen &&
+            {!isCartOpen && 
                 <div className="ecomm-body">
                     <div className="ecomm-filter">
                         <div className="price-filter filter">
@@ -225,7 +279,7 @@ function Ecomm() {
                                             value={price}
                                             name="price"
                                             type="checkbox"
-                                            onChange={(e) => handlePriceFilter(e)}
+                                            onChange={(e) => handleCheckboxFilter(e, setPriceFilter)}
                                         />
                                         <label htmlFor={price}>{price}</label>
                                     </div>
@@ -242,7 +296,7 @@ function Ecomm() {
                                         value={brand}
                                         name="brand"
                                         type="checkbox"
-                                        onChange={(e) => handleBrandFilter(e)}
+                                        onChange={(e) => handleCheckboxFilter(e, setBrandFilter)}
                                     />
                                     <label htmlFor={brand}>{brand}</label>
                                 </div>
@@ -258,7 +312,7 @@ function Ecomm() {
                                         value={type}
                                         name="type"
                                         type="checkbox"
-                                        onChange={(e) => handleTypeFilter(e)}
+                                        onChange={(e) => handleCheckboxFilter(e, setTypeFilter)}
                                     />
                                     <label htmlFor={type}>{type}</label>
                                 </div>
@@ -268,14 +322,11 @@ function Ecomm() {
 
                     <div className="ecomm-product">
                         <ul className="ecomm-product-item">
-                            {filteredData.length > 0 ? (
+                            {filteredData ? (
                                 <>
                                     {filteredData.map((product) => (
                                         <li key={product.name} 
-                                            onClick={() => {
-                                                setProductClick(product);
-                                                setIsProductOpen(true); 
-                                            }}
+                                            onClick={() => setProductClick(product)}
                                         >
                                             <img src={`/ecomm_photo/${product.name.toLowerCase().replace(/ +/g, "")}.jpg`} 
                                                     alt={product.name}
@@ -297,7 +348,7 @@ function Ecomm() {
                             )}
                         </ul>
 
-                        <Modal isOpen={isProductOpen} onClose={handleCloseProduct}>
+                        <Modal isOpen={(productClick !== null)} onClose={() => setProductClick(null)}>
                             {/* IMPLEMENT MODAL INFO HERE WITH CART */}
                             {productClick && (
                                 <div className="product-modal">
@@ -328,7 +379,60 @@ function Ecomm() {
 
             {isCartOpen &&
                 <div className="ecomm-cart-body">
-                    ECOMM CART UNDER DEVELOPMENT
+                    {cartProducts.length > 0 ? (
+                        <div>
+                            <div className="ecomm-cart">
+                                {cartProducts
+                                    .filter((item) => item.SKU && item.SKU.trim() !== "")
+                                    .map((item) => (
+                                        <div key={item.name} className="ecomm-cart-product">
+                                            <div>
+                                                <img src={`/ecomm_photo/${item.name.toLowerCase().replace(/ +/g, "")}.jpg`} alt={item.name} />
+                                            </div>
+                                            <div className="item">
+                                                <h3>{item.name}</h3>
+                                                <h4>SKU: {item.SKU}</h4>
+                                            </div>
+                                            <div className="item">
+                                                <p>Price: ${item.price}</p>
+                                            </div>
+                                            <div className="item">
+                                                <button className="minus-btn" onClick={() => handleQtyChange(item.SKU, "minus")}><FontAwesomeIcon icon={faMinus} /></button>
+                                                <span className="quantity">{item.quantity}</span>
+                                                <button className="plus-btn" onClick={() => handleQtyChange(item.SKU, "plus")}><FontAwesomeIcon icon={faPlus} /></button>
+                                            </div>
+                                            <div className="ecomm-last-item item">
+                                                <h3>Total: ${(item.quantity * item.price).toFixed(2)}</h3>
+                                            </div>
+                                            <FontAwesomeIcon 
+                                                icon={faTrash} 
+                                                className="ecomm-remove-product"
+                                                onClick={() => handleRemoveProduct(item.SKU)}
+                                            />
+                                        </div>
+                                ))}
+                            </div>
+
+                            <div className="cart-total">
+                                <div className="cart-total-item">
+                                    <div className="label"><h3>Sub-Total:</h3></div>
+                                    <div><h3>${cartTotals.subtotal.toFixed(2)}</h3></div>
+                                </div>
+                                <div className="cart-total-item">
+                                    <div className="label"><h3>Tax:</h3></div>
+                                    <div><h3>${cartTotals.tax.toFixed(2)}</h3></div>
+                                </div>
+                                <div className="cart-total-item ecomm-product-price">
+                                    <div className="label"><h3>Total:</h3></div>
+                                    <div><h3>${cartTotals.total.toFixed(2)}</h3></div>
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <p>
+                            <strong>Your Cart is Empty!</strong>
+                        </p>
+                    )}
                 </div>
             }
         </div>
