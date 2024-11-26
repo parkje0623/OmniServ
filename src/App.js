@@ -1,5 +1,5 @@
 import './App.css';
-import { auth } from './firebase';
+import { auth, db } from './firebase';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

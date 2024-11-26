@@ -35,6 +35,10 @@
     transition: margin-left 1s ease;
   }
 
+  .sidebar-container {
+    width: 7rem !important;
+  }
+
   .sidebar-title,
   .sidebar-crossing-line {
     opacity: 0;

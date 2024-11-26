@@ -64,7 +64,7 @@ function Home() {
                 </div>
 
                 <div className="about-topic">
-                    <h4>E-Commerce (Not Ready)</h4>
+                    <h4>E-Commerce (In Progress)</h4>
                     <p>Learning Purposes for E-Commerce Page:</p>
                     <ul>
                         <li>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import useAuthRedirect from "../hooks/useAuthRedirect";
+import { addUserDatabase } from '../utils/databaseHandler';
 
 function SignUp() {
     // Redirect if user is logged in
@@ -74,6 +75,7 @@ function SignUp() {
         try {
             const userCred = await createUserWithEmailAndPassword(auth, email, password);
             console.log("Sign-up Successful: ", userCred);
+            addUserDatabase(userCred.user.uid);
             navigate('/');
         } catch (error) {
             console.error("Sign-up Sucessful: ", error);
