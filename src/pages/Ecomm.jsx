@@ -36,6 +36,7 @@ function Ecomm() {
 
     // Variables for Cart
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isCartAdded, setIsCartAdded] = useState(false);
     const [cartProducts, setCartProducts] = useState([]);
     const [cartTotals, setCartTotals] = useState({ subtotal: 0, tax: 0, total: 0 });
 
@@ -68,6 +69,7 @@ function Ecomm() {
                     await setDoc(existingProductQuery, newProduct);
                     console.log("New Product added to cart.");
                 }
+                setIsCartAdded(true);
             }
         } catch (error) {
             console.error("Error Adding Product to Cart: ", error);
@@ -361,6 +363,9 @@ function Ecomm() {
                                             onClick={() => handleAddCart(productClick)}
                                         />
                                     </h2>
+                                    <Modal isOpen={isCartAdded} onClose={() => setIsCartAdded(false)}>
+                                        <h3 className="success-message">{productClick.name} Has Been Added to the Cart!</h3>
+                                    </Modal>
                                     <h4 className="ecomm-product-price">
                                         <strong>${productClick.price}</strong>&nbsp;
                                         {currCategory === 'Electronics' &&
