@@ -64,6 +64,17 @@ function Ecomm() {
         }
     }
 
+    // Handling Category onClick
+    const handleCategoryClick = (category) => {
+        setSortOption("low-to-high");
+        setCurrCategory(category);
+        setIsCartOpen(false);
+        setSearchFilter("");
+        setPriceFilter([]);
+        setTypeFilter([]);
+        setBrandFilter([]);
+    };
+
     // Handling Add Product to Cart
     const handleAddCart = async (product) => {
         try {
@@ -253,10 +264,7 @@ function Ecomm() {
                         <div key={category} className="content-selector">
                             <button 
                                 type="button" 
-                                onClick={() => {
-                                    setCurrCategory(category);
-                                    setIsCartOpen(false);
-                                }}
+                                onClick={() => handleCategoryClick(category)}
                                 className={currCategory === category ? 'active' : ''}
                             >
                                 {category}
