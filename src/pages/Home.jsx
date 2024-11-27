@@ -5,7 +5,7 @@ function Home() {
         <div className="main-container">
             <div className="about-container">
                 <div className="about-topic">
-                    <h4>Dashboard (In Progress)</h4>
+                    <h4>Dashboard (Ready)</h4>
                     <p>Learning Purposes for Dashboard Page:</p>
                     <ul>
                         <li>
@@ -36,14 +36,14 @@ function Home() {
                                 </li>
                             </ul>  
                         </li>
-                        <li>
-                        <strong>Project Management (Not Ready):</strong>
+                        {/* <li>
+                            <strong>Project Management (Not Ready):</strong>
                             <ul>
                                 <li>
                                     In Progress
                                 </li>
                             </ul>  
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
 
@@ -137,13 +137,35 @@ function Home() {
                 </div>
 
                 <div className="about-topic">
-                    <h4>Profile (Not Ready)</h4>
+                    <h4>Profile (Ready)</h4>
                     <p>Learning Purposes for Profile Page:</p>
+                    <ul>
+                        <li>
+                            Displaying User Information by using Firebase 'auth' methods
+                        </li>
+                        <li>
+                            Update User Information by using Firebase 'auth' methods through 'Form' submission
+                        </li>
+                        <li>
+                            Safely Deleting User and data associated with the use (by re-asking user for confirmation) from the Firebase System
+                        </li>
+                    </ul>
                 </div>
 
                 <div className="about-topic">
-                    <h4>Setting (Not Ready)</h4>
+                    <h4>Setting (In Progress)</h4>
                     <p>Learning Purposes for Setting Page:</p>
+                    <ul>
+                        <li>
+                            Dark Mode (NOT READY)
+                        </li>
+                        <li>
+                            Auto-Logout (In Progress)
+                        </li>
+                        <li>
+                            Reset Setting (NOT READY)
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

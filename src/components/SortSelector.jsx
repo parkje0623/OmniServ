@@ -11,8 +11,8 @@ function SortSelector ({ initialOption, optionList, setSortOption }) {
                 onChange={(e) => setSortOption(e.target.value)}
             >
                 {optionList.length > 0 &&
-                    optionList.map((option) => (
-                        <option value={option.value}>{option.title}</option>
+                    optionList.map((option, index) => (
+                        <option key={index} value={option.value}>{option.title}</option>
                     ))
                 }
             </select>

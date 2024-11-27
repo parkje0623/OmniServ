@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import useAuthRedirect from "../hooks/useAuthRedirect";
 import { addUserDatabase } from '../utils/databaseHandler';
+import { checkConfirmPassword, checkPasswordConditions } from "../utils/utils";
 
 function SignUp() {
     // Redirect if user is logged in
@@ -18,56 +19,14 @@ function SignUp() {
     const auth = getAuth();
     const navigate = useNavigate();
 
-    // Handle Password Condition Validation
-    const checkPasswordConditions = (password) => {
-        const hasUppercase = /[A-Z]/.test(password);
-        const hasLowercase = /[a-z]/.test(password);
-        const hasNumber = /\d/.test(password);
-        const hasSpecialChar = /[!@#$%^&*()]/.test(password);
-        const isValidLength = password.length >= 8;
-
-        let errorMsg = "";
-        switch (true) {
-            case !isValidLength:
-                errorMsg = "*Password must be at least 8 characters long.";
-                break;
-            case !hasUppercase:
-                errorMsg = "*Password must contain at least one uppercase letter.";
-                break;
-            case !hasLowercase:
-                errorMsg = "*Password must contain at least one lowercase letter.";
-                break;
-            case !hasNumber:
-                errorMsg = "*Password must contain at least one number.";
-                break;
-            case !hasSpecialChar:
-                errorMsg = "*Password must contain at least one of (!@#$%^&*()).";
-                break;
-            default:
-                setPasswordError("");
-                return true;
-        }
-        setPasswordError(errorMsg);
-        return false;
-    };
-    // Handle Confirm Password Match
-    const checkConfirmPassword = (password, confirm) => {
-        if (password === confirm) {
-            setConfirmError("");
-            return true;
-        }
-        setConfirmError("Confirm password must match the password.");
-        return false
-    };
-
     // Handle Sign Up Process
     const handleSignUp = async (e) => {
         e.preventDefault();
         // Check for Password & Confirm Conditions
-        if (!checkPasswordConditions(password)) {
+        if (!checkPasswordConditions(password, setPasswordError)) {
             return;
         }
-        if (!checkConfirmPassword(password, confirm)) {
+        if (!checkConfirmPassword(password, confirm, setConfirmError)) {
             return;
         }
         

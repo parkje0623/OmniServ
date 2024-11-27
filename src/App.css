@@ -316,5 +316,5 @@ h4,
 
 /* Success Messages */
 .success-message {
-  color: green;
+  color: green !important;
 }

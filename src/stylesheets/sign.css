@@ -87,7 +87,7 @@
 /* Required Text Styling */
 .required,
 .error {
-    color: var(--important-text);
+    color: var(--important-text) !important;
     font-weight: 600;
 }
 
