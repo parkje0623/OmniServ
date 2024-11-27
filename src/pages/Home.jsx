@@ -64,18 +64,40 @@ function Home() {
                 </div>
 
                 <div className="about-topic">
-                    <h4>E-Commerce (In Progress)</h4>
+                    <h4>E-Commerce (Ready)</h4>
                     <p>Learning Purposes for E-Commerce Page:</p>
                     <ul>
                         <li>
-                            Products
+                            <strong>Products Display</strong>
+                            <ul>
+                                <li>
+                                    Fetching Data from Firebase Database
+                                </li>
+                                <li>
+                                    Handling Cloud Firestore Rule to dynamically control access permission to the Database for read and write actions
+                                </li>
+                                <li>
+                                    Applying real-time filtering of the products using 'filter()' method and debounce method (for search bar) inside the useEffect
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            Sales Order  
+                            <strong>User's Cart</strong>
+                            <ul>
+                                <li>
+                                    Handling Changes to the Firebase Database (adding, removing, editing, etc.)
+                                </li>
+                                <li>
+                                    Handling Cloud Firestore Rule to dynamically control access permission to the Database for read and write actions
+                                </li>
+                                <li>
+                                    Use of 'beforeunload' and 'localStorage' for Guest users to keep their products in Cart for an Hour.
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            Web Socket (Chatting, ???)
-                        </li>
+                        {/* <li>
+                            Web Socket (Chatting like ChatBot)
+                        </li> */}
                     </ul>
                 </div>
 

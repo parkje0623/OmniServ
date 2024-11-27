@@ -1,16 +1,27 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { auth, db } from "../firebase";
 import { doc, getDoc, collection, updateDoc, increment, setDoc, getDocs, deleteDoc } from "firebase/firestore";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartArrowDown, faCartPlus, faSearch, faMinus, faPlus, faTrash } from '@fortawesome/fontawesome-free-solid';
 import '../stylesheets/ecomm.css';
-import Modal from "../components/Modal";
 import { useDebounce } from "../hooks/useDebounce";
 import { ecommProductFilters } from "../utils/filters";
+import { v4 as uuidv4 } from 'uuid';
+import CartFinalTotals from "../components/CartFinalTotal";
+import CartProduct from "../components/CartProduct";
+import SortSelector from "../components/SortSelector";
+import SearchBar from "../components/SearchBar";
+import CartButton from "../components/CartButton";
+import CheckboxFilter from "../components/CheckboxFilter";
+import ProductList from "../components/ProductList";
+import ProductModal from "../components/ProductModal";
 
 function Ecomm() {
     // Current User UID
-    const userId = auth.currentUser ? auth.currentUser.uid : 'guests';
+    const userId = auth.currentUser ? auth.currentUser.uid : (localStorage.getItem('guestId') || `guests-${uuidv4()}`);
+    // Save the guest ID to localStorage for future sessions
+    if (!auth.currentUser && !localStorage.getItem('guestId')) {
+        localStorage.setItem('guestId', userId);
+    }
+
     // Fixed Categories and its Components
     const categorySelection = ["Electronics", "Clothings"];
     const categoryPriceRange = {
@@ -26,6 +37,10 @@ function Ecomm() {
     // Variables for Filters
     const [filteredData, setFilteredData] = useState([]);
     const [sortOption, setSortOption] = useState("low-to-high");
+    const sortOptionList = [
+        { title: 'Price Low to High', value: 'low-to-high' },
+        { title: 'Price High to Low', value: 'high-to-low' }
+    ]
     const [searchFilter, setSearchFilter] = useState("");
     const debouncedTerm = useDebounce(searchFilter, 100);
     const [priceFilter, setPriceFilter] = useState([]);
@@ -92,11 +107,7 @@ function Ecomm() {
                 const subTotal = cartProducts.reduce((sum, item) => sum + parseFloat(item.price * item.quantity || 0), 0);
                 const tax = subTotal * 0.12;
                 const total = subTotal + tax;
-                setCartTotals({
-                    subtotal: subTotal,
-                    tax: tax,
-                    total: total
-                });
+                setCartTotals({ subtotal: subTotal, tax: tax, total: total });
                 console.log("Cart Products Fetched Successfully!");
             }
         } catch (error) {
@@ -148,7 +159,7 @@ function Ecomm() {
 
     // Clear Cart (Only for Guests) on Exit page
     const clearCartOnExit = useCallback(async () => {
-        if (userId === 'guests') {
+        if (userId.includes('guests')) {
             const cartCollectionRef = collection(db, `users/${userId}/cart`);
             const cartSnapshot = await getDocs(cartCollectionRef);
 
@@ -158,19 +169,32 @@ function Ecomm() {
             console.log("Cart cleared on exit!");
         }
     }, [userId]);
-    // beforeunload: handles the user on exit
+    // Handling Guest's Cart to expire after 1 hour
     useEffect(() => {
         const handleUnload = () => {
-            // Use localStorage to store the "clear cart" flag
-            if (userId === 'guests') {
+            // Only for guests: store clear cart flag and timestamp
+            if (userId.includes('guests')) {
                 localStorage.setItem('clearCart', 'true');
+                localStorage.setItem('clearCartTimestamp', Date.now());
             }
         };
         window.addEventListener('beforeunload', handleUnload);
     
-        if (localStorage.getItem('clearCart') === 'true') {
-            clearCartOnExit(); 
-            localStorage.removeItem('clearCart'); 
+        // Check if the user is returning within a few minutes
+        const clearCartFlag = localStorage.getItem('clearCart');
+        const clearCartTimestamp = localStorage.getItem('clearCartTimestamp');
+        const currentTime = Date.now();
+
+        if (clearCartFlag === 'true' && clearCartTimestamp) {
+            const timeElapsed = currentTime - parseInt(clearCartTimestamp, 10);
+            const timeLimit = 60 * 60 * 1000; // 1 Hour 
+            console.log(timeElapsed, timeLimit, clearCartTimestamp)
+            if (timeElapsed > timeLimit) {
+                // If more than timeLimit have passed, reset the flag
+                clearCartOnExit();
+                localStorage.removeItem('clearCart');
+                localStorage.removeItem('clearCartTimestamp');
+            }
         }
         return () => window.removeEventListener('beforeunload', handleUnload);
     }, [userId, clearCartOnExit]);
@@ -243,27 +267,9 @@ function Ecomm() {
                 
                 {!isCartOpen && 
                     <div className="ecomm-option-header">
-                        <div className="display-order-selector">
-                            <label htmlFor="display-option">Sort </label>
-                            <select name="display-option" id="display-option" onClick={(e) => setSortOption(e.target.value)}>
-                                <option value="low-to-high">Price Low to High</option>
-                                <option value="high-to-low">Price High to Low</option>
-                            </select>
-                        </div>
-
-                        <div className="search-bar">
-                            <FontAwesomeIcon icon={faSearch} />
-                            <input 
-                                type="text"
-                                placeholder="Search"
-                                onChange={(e) => setSearchFilter(e.target.value)} 
-                            />
-                        </div>
-
-                        <div className="cart" onClick={handleCartClick}>
-                            <FontAwesomeIcon icon={faCartPlus} /> 
-                            <span>Cart</span>
-                        </div>
+                        <SortSelector initialOption={sortOption} optionList={sortOptionList} setSortOption={setSortOption} />
+                        <SearchBar searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
+                        <CartButton handleCartClick={handleCartClick} />
                     </div>
                 }
             </div>
@@ -271,113 +277,45 @@ function Ecomm() {
             {!isCartOpen && 
                 <div className="ecomm-body">
                     <div className="ecomm-filter">
-                        <div className="price-filter filter">
-                            <p><strong>Price</strong></p>
-                            {categoryPriceRange && currCategory && 
-                                (categoryPriceRange[currCategory]).map((price) => (
-                                    <div key={price} className="checkbox-filter">
-                                        <input 
-                                            id={price}
-                                            value={price}
-                                            name="price"
-                                            type="checkbox"
-                                            onChange={(e) => handleCheckboxFilter(e, setPriceFilter)}
-                                        />
-                                        <label htmlFor={price}>{price}</label>
-                                    </div>
-                                )
-                            )}
-                        </div>
+                        <CheckboxFilter 
+                            title="Price" 
+                            filterOptions={categoryPriceRange?.[currCategory]}
+                            filterName="price"
+                            handleCheckboxFilter={(e) => handleCheckboxFilter(e, setPriceFilter)}
+                        />
+                        
+                        <CheckboxFilter
+                            title="Brand" 
+                            filterOptions={productBrand}
+                            filterName="brand"
+                            handleCheckboxFilter={(e) => handleCheckboxFilter(e, setBrandFilter)}
+                        />
 
-                        <div className="brand-filter filter">
-                            <p><strong>Brand</strong></p>
-                            {productBrand && productBrand.map((brand) => (
-                                <div key={brand} className="checkbox-filter">
-                                    <input 
-                                        id={brand}
-                                        value={brand}
-                                        name="brand"
-                                        type="checkbox"
-                                        onChange={(e) => handleCheckboxFilter(e, setBrandFilter)}
-                                    />
-                                    <label htmlFor={brand}>{brand}</label>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="type-filter filter">
-                            <p><strong>Type</strong></p>
-                            {productType && productType.map((type) => (
-                                <div key={type} className="checkbox-filter">
-                                    <input 
-                                        id={type}
-                                        value={type}
-                                        name="type"
-                                        type="checkbox"
-                                        onChange={(e) => handleCheckboxFilter(e, setTypeFilter)}
-                                    />
-                                    <label htmlFor={type}>{type}</label>
-                                </div>
-                            ))}
-                        </div>
+                        <CheckboxFilter
+                            title="Type" 
+                            filterOptions={productType}
+                            filterName="type"
+                            handleCheckboxFilter={(e) => handleCheckboxFilter(e, setTypeFilter)}
+                        />
                     </div>
 
                     <div className="ecomm-product">
-                        <ul className="ecomm-product-item">
-                            {filteredData ? (
-                                <>
-                                    {filteredData.map((product) => (
-                                        <li key={product.name} 
-                                            onClick={() => setProductClick(product)}
-                                        >
-                                            <img src={`/ecomm_photo/${product.name.toLowerCase().replace(/ +/g, "")}.jpg`} 
-                                                    alt={product.name}
-                                                    loading="lazy" />
-                                            <strong>{product.name}</strong>
-                                            <p>
-                                                <strong className="ecomm-product-price">{`$${product.price}`}</strong><br/>
-                                                {currCategory === 'Electronics' &&
-                                                    <span className="ecomm-product-ehf">Plus $0.45 EHF</span>
-                                                }
-                                            </p>
-                                        </li>
-                                    ))}
-                                </>
-                            ) : (
-                                <div className="ecomm-product-not-available">
-                                    <p><strong>{currCategory} Not Available. Please Try Again Later.</strong></p>
-                                </div>
-                            )}
-                        </ul>
+                        <ProductList
+                            filteredData={filteredData}
+                            setProductClick={setProductClick}
+                            currCategory={currCategory}
+                        />
 
-                        <Modal isOpen={(productClick !== null)} onClose={() => setProductClick(null)}>
-                            {/* IMPLEMENT MODAL INFO HERE WITH CART */}
-                            {productClick && (
-                                <div className="product-modal">
-                                    <img src={`/ecomm_photo/${productClick.name.toLowerCase().replace(/ +/g, "")}.jpg`} alt={productClick.name} />
-                                    <h2>
-                                        {productClick.name}
-                                        <FontAwesomeIcon 
-                                            icon={faCartArrowDown}
-                                            id="product-modal-icon"
-                                            onClick={() => handleAddCart(productClick)}
-                                        />
-                                    </h2>
-                                    <Modal isOpen={isCartAdded} onClose={() => setIsCartAdded(false)}>
-                                        <h3 className="success-message">{productClick.name} Has Been Added to the Cart!</h3>
-                                    </Modal>
-                                    <h4 className="ecomm-product-price">
-                                        <strong>${productClick.price}</strong>&nbsp;
-                                        {currCategory === 'Electronics' &&
-                                            <span className="ecomm-product-ehf">Plus $0.45 EHF</span>
-                                        }
-                                    </h4>
-                                    <h4>Brand: <strong>{productClick.brand}</strong></h4>
-                                    <h4>SKU: <strong>{productClick.SKU}</strong></h4>
-                                    <p>{productClick.description}</p>
-                                </div>
-                            )}
-                        </Modal>
+                        {productClick && (
+                            <ProductModal 
+                                product={productClick} 
+                                currCategory={currCategory} 
+                                handleAddCart={handleAddCart} 
+                                setProductClick={setProductClick} 
+                                isCartAdded={isCartAdded} 
+                                setIsCartAdded={setIsCartAdded} 
+                            />
+                        )}
                     </div>
                 </div>
             }
@@ -390,48 +328,16 @@ function Ecomm() {
                                 {cartProducts
                                     .filter((item) => item.SKU && item.SKU.trim() !== "")
                                     .map((item) => (
-                                        <div key={item.name} className="ecomm-cart-product">
-                                            <div>
-                                                <img src={`/ecomm_photo/${item.name.toLowerCase().replace(/ +/g, "")}.jpg`} alt={item.name} />
-                                            </div>
-                                            <div className="item">
-                                                <h3>{item.name}</h3>
-                                                <h4>SKU: {item.SKU}</h4>
-                                            </div>
-                                            <div className="item">
-                                                <p>Price: ${item.price}</p>
-                                            </div>
-                                            <div className="item">
-                                                <button className="minus-btn" onClick={() => handleQtyChange(item.SKU, "minus")}><FontAwesomeIcon icon={faMinus} /></button>
-                                                <span className="quantity">{item.quantity}</span>
-                                                <button className="plus-btn" onClick={() => handleQtyChange(item.SKU, "plus")}><FontAwesomeIcon icon={faPlus} /></button>
-                                            </div>
-                                            <div className="ecomm-last-item item">
-                                                <h3>Total: ${(item.quantity * item.price).toFixed(2)}</h3>
-                                            </div>
-                                            <FontAwesomeIcon 
-                                                icon={faTrash} 
-                                                className="ecomm-remove-product"
-                                                onClick={() => handleRemoveProduct(item.SKU)}
-                                            />
-                                        </div>
+                                        <CartProduct
+                                            key={item.SKU}
+                                            item={item}
+                                            handleQtyChange={handleQtyChange}
+                                            handleRemoveProduct={handleRemoveProduct}
+                                        />
                                 ))}
                             </div>
-
-                            <div className="cart-total">
-                                <div className="cart-total-item">
-                                    <div className="label"><h3>Sub-Total:</h3></div>
-                                    <div><h3>${cartTotals.subtotal.toFixed(2)}</h3></div>
-                                </div>
-                                <div className="cart-total-item">
-                                    <div className="label"><h3>Tax:</h3></div>
-                                    <div><h3>${cartTotals.tax.toFixed(2)}</h3></div>
-                                </div>
-                                <div className="cart-total-item ecomm-product-price">
-                                    <div className="label"><h3>Total:</h3></div>
-                                    <div><h3>${cartTotals.total.toFixed(2)}</h3></div>
-                                </div>
-                            </div>
+                            
+                            <CartFinalTotals cartTotals={cartTotals} />
                         </div>
                     ) : (
                         <p>
