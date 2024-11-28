@@ -153,17 +153,44 @@ function Home() {
                 </div>
 
                 <div className="about-topic">
-                    <h4>Setting (In Progress)</h4>
+                    <h4>Setting (Ready)</h4>
                     <p>Learning Purposes for Setting Page:</p>
                     <ul>
                         <li>
-                            Dark Mode (Ready)
+                            <strong>Dark Mode</strong>
+                            <ul>
+                                <li>
+                                    DarkMode Context setup to manage and share the related state across the component tree without having to pass props manually
+                                </li>
+                                <li>
+                                    Using 'classList add/remove' along with Toggle Mechanism with input element to toggle dark-mode on/off for CSS styling
+                                </li>
+                                <li>
+                                    Applying Dark-Mode styling using CSS
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            Auto-Logout (Ready)
+                            <strong>Auto-Logout</strong>
+                            <ul>
+                                <li>
+                                    Auto-Logout Context setup to manage and share the related state across the component tree without having to pass props manually
+                                </li>
+                                <li>
+                                    Using 'useRef' for persistent timer for auto-logout and 'addEventListener' to reset timer on user activity
+                                </li>
+                                <li>
+                                    Handling User Logout by utilizing 'Firebase Sign-Out' method    
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            Reset Setting (Ready)
+                            <strong>Reset Setting</strong>
+                            <ul>
+                                <li>
+                                    Upon confirmation, the function is triggered to reset all other settings to default values.
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
