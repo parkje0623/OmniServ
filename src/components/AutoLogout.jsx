@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 import { useAutoLogout } from "../context/AutoLogoutContext";

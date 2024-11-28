@@ -9,9 +9,7 @@ const AutoLogoutContext = createContext();
 export const useAutoLogout = () => useContext(AutoLogoutContext);
 
 export const AutoLogoutProvider = ({ children }) => {
-    const userId = auth.currentUser ? auth.currentUser.uid : null;
-
-    // Default Timeout: 30 Minutes
+    const [userId, setUserId] = useState(null);
     const [timeoutDuration, setTimeoutDuration] = useState(null);
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
@@ -24,9 +22,9 @@ export const AutoLogoutProvider = ({ children }) => {
 
         try {
             const settingsCollectionRef = doc(db, `users/${userId}/settings/auto-logout`);
-            const existingProductSnapshot = await getDoc(settingsCollectionRef);
+            const existingSettingSnapshot = await getDoc(settingsCollectionRef);
 
-            if (existingProductSnapshot.exists()) {
+            if (existingSettingSnapshot.exists()) {
                 await updateDoc(settingsCollectionRef, { duration: duration });
             } else {
                 await setDoc(settingsCollectionRef, { duration: duration });
@@ -39,14 +37,14 @@ export const AutoLogoutProvider = ({ children }) => {
     const getInitialTimeoutDuration = useCallback(async () => {
         try {
             const settingsCollectionRef = collection(db, `users/${userId}/settings`);
-            const existingProductQuery = doc(settingsCollectionRef, 'auto-logout');
-            const existingProductSnapshot = await getDoc(existingProductQuery);
+            const existingSettingQuery = doc(settingsCollectionRef, 'auto-logout');
+            const existingSettingSnapshot = await getDoc(existingSettingQuery);
 
-            if (existingProductSnapshot.exists()) {
-                setTimeoutDuration(existingProductSnapshot.data().duration);
+            if (existingSettingSnapshot.exists()) {
+                setTimeoutDuration(existingSettingSnapshot.data().duration);
             } else {
-                const newTimeoutDuration = { duration: 1800000 }
-                await setDoc(existingProductQuery, newTimeoutDuration);
+                const newTimeoutDuration = { duration: 1800000 };
+                await setDoc(existingSettingQuery, newTimeoutDuration);
                 setTimeoutDuration(newTimeoutDuration.duration);
                 console.log("New Duration added to settings.");
             }
@@ -66,6 +64,9 @@ export const AutoLogoutProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setIsUserLoggedIn(!!user);
+            if (user) {
+                setUserId(user.uid);
+            }
         });
 
         return () => {

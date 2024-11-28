@@ -36,9 +36,7 @@
     font-size: larger;
     border-radius: 12px;
     border: 2px solid #3d444d;
-    /* background-color: #212830;  */
     background-color: #ffffff;
-    /* color: #fa5e55; */
     color: #ff0000;
 }
 .setting-body button:hover {
@@ -51,4 +49,78 @@
 .setting-body p {
     font-weight: bolder;
     color: #212830;
+}
+
+.setting-body select {
+    padding: .5rem;
+    font-size: medium;
+    border-radius: 12px;
+    border: 2px solid #212830;
+    cursor: pointer;
+}
+
+/* Dark Mode Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 5rem;
+    height: 2rem;
+}
+.switch input {
+    opacity: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 1s;
+    transition: 1s;
+    display: flex;
+    align-items: center;
+}
+
+/* Slider Text ON/OFF */
+.slider.on {
+    color: white;
+    justify-content: flex-start;
+    padding-left: 0.5rem;
+}
+.slider.off {
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: .25rem;
+    bottom: .25rem;
+    background-color: white;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+  
+input:checked + .slider {
+    background-color: var(--icon-background);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(3rem);
+    -ms-transform: translateX(3rem);
+    transform: translateX(3rem);
+}
+  
+/* Rounded sliders */
+.switch .slider.round {
+    border-radius: 34px;
+}
+.switch .slider.round:before {
+    border-radius: 50%;
 }

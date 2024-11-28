@@ -157,13 +157,13 @@ function Home() {
                     <p>Learning Purposes for Setting Page:</p>
                     <ul>
                         <li>
-                            Dark Mode (NOT READY)
+                            Dark Mode (Ready)
                         </li>
                         <li>
-                            Auto-Logout (In Progress)
+                            Auto-Logout (Ready)
                         </li>
                         <li>
-                            Reset Setting (NOT READY)
+                            Reset Setting (Ready)
                         </li>
                     </ul>
                 </div>

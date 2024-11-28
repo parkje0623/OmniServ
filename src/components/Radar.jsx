@@ -37,6 +37,10 @@ function RadarChart({ dataset }) {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
+            title: {
+                display: true,
+                text: "Each Age Group's Spent Time on Interests"
+            },
             legend: {
                 position: 'top',
             },
@@ -51,8 +55,9 @@ function RadarChart({ dataset }) {
         },
         scales: {
             r: {
-                angleLines: {
-                    display: false
+                ticks: {
+                    display: true,  
+                    backdropColor: 'transparent',
                 },
                 suggestedMin: 0,
                 suggestedMax: 450,

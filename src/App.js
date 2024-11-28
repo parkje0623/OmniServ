@@ -6,8 +6,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 import { SubContentProvider } from './context/SubContentContext';
 import { AutoLogoutProvider } from "./context/AutoLogoutContext";
+import { DarkModeProvider } from './context/DarkModeContext';
 import Layout from './components/Layout';
 import AutoLogout from "./components/AutoLogout";
+import DarkMode from './components/DarkMode';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Movie from './pages/Movie';
@@ -23,22 +25,25 @@ function App() {
     <UserProvider>
       <SubContentProvider>
         <AutoLogoutProvider>
-          <Router>
-            <Layout>
-              <AutoLogout />
-              <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/dashboard' element={<Dashboard />} />
-                <Route path='/movie' element={<Movie />} />
-                <Route path='/ecomm' element={<Ecomm />} />
-                <Route path='/calculator' element={<Calculator />} />
-                <Route path='/profile' element={<Profile />} />
-                <Route path='/signin' element={<SignIn />} />
-                <Route path='/signup' element={<SignUp />} />
-                <Route path='/setting' element={<Setting />} />
-              </Routes>
-            </Layout>
-          </Router>
+          <DarkModeProvider>
+            <Router>
+              <DarkMode />
+              <Layout>
+                <AutoLogout />
+                <Routes>
+                  <Route path='/' element={<Home />} />
+                  <Route path='/dashboard' element={<Dashboard />} />
+                  <Route path='/movie' element={<Movie />} />
+                  <Route path='/ecomm' element={<Ecomm />} />
+                  <Route path='/calculator' element={<Calculator />} />
+                  <Route path='/profile' element={<Profile />} />
+                  <Route path='/signin' element={<SignIn />} />
+                  <Route path='/signup' element={<SignUp />} />
+                  <Route path='/setting' element={<Setting />} />
+                </Routes>
+              </Layout>
+            </Router>
+          </DarkModeProvider>
         </AutoLogoutProvider>
       </SubContentProvider>
     </UserProvider>

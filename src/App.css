@@ -318,3 +318,100 @@ h4,
 .success-message {
   color: green !important;
 }
+
+/* Dark Mode Setting for the Entire Application */
+.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+/* Dark Mode for Sidebars & Headers */
+.dark-mode .header-container,
+.dark-mode a:hover,
+.dark-mode .sidebar-content-section.active,
+.dark-mode .sub-content-bar li:hover,
+.dark-mode .sub-content-bar li.selected,
+.dark-mode .ecomm-option-header {
+  background-color: #464646 !important;
+}
+/* Dark Mode for Sidebar Icons */
+.dark-mode .icon {
+  background-color: #105396 !important;
+}
+
+/* Dark Mode for Ecomm Page */
+.dark-mode .ecomm-option-header {
+  border: 1px solid #121212 !important;
+}
+.dark-mode .ecomm-filter {
+  border-right: 1px solid #464646 !important;
+}
+.dark-mode .filter {
+  border-bottom: 1px solid #464646 !important;
+}
+.dark-mode .checkbox-filter input:checked {
+  /* Background Color when checkbox is CHECKED */
+  accent-color: #105396 !important;
+}
+
+/* Dark Mode for all p, label, and input */
+.dark-mode p,
+.dark-mode label,
+.dark-mode input {
+  color: #999999 !important;
+}
+/* Dark Mode for input, dropdown-list, and select */
+.dark-mode input,
+.dark-mode .search-dropdown-list,
+.dark-mode select,
+.dark-mode .ecomm-option-header .search-bar {
+  color: #121212 !important;
+  background-color: #636363 !important;
+}
+.dark-mode input::placeholder {
+  color: #252525 !important;
+}
+
+/* Dark Mode for regular buttons */
+.dark-mode button {
+  background-color: #212830 !important;
+  color: #fa5e55 !important;
+}
+.dark-mode button:hover {
+  background-color: #b71c1c !important;
+  color: #eeeeee !important;
+}
+/* Dark Mode for Sub-Sidebar Buttons */
+.dark-mode .content-selector button {
+  background-color: #121212 !important;
+}
+.dark-mode .content-selector button:hover,
+.dark-mode .content-selector button.active {
+  background-color: #212830 !important;
+}
+.dark-mode .content-selector button {
+  border-bottom: 1px solid #999999 !important;
+}
+
+/* Dark Mode for Modal */
+.dark-mode .modal-content {
+  background-color: #121212 !important;
+}
+.dark-mode .modal-content button:not(.warning-button) {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark Mode for Dashboard Chart Background-Colors */
+.dark-mode .data {
+  background-color: #1a1a1a;
+}
+
+/* Dark Mode for Success & Error/Required Messages */
+.dark-mode .success-message {
+  color: #228B22 !important;
+}
+.dark-mode .required,
+.dark-mode .ecomm-product-price,
+.dark-mode .error {
+  color: #b71c1c !important;
+}

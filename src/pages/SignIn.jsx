@@ -4,7 +4,6 @@ import GoogleButton from 'react-google-button'
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import useAuthRedirect from "../hooks/useAuthRedirect";
 import '../stylesheets/sign.css';
-import { addUserDatabase } from '../utils/databaseHandler';
 
 function SignIn() {
     // Redirect if user is logged in
@@ -38,7 +37,6 @@ function SignIn() {
         try {
             const result = await signInWithPopup(auth, provider);
             console.log("Google Signed in: ", result);
-            addUserDatabase(result.user.uid);
             navigate('/');
         } catch (error) {
             console.error("Error Sign-in with Google: ", error);

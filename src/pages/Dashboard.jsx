@@ -2,13 +2,14 @@ import React, { useEffect, useMemo } from "react";
 import { useSubContentContext } from "../context/SubContentContext";
 import SubContentBar from "../components/SubContentBar";
 import Analytics from "../components/dashboard/Analytics";
-import ProjectManagement from "../components/dashboard/ProjectManagement";
+// import ProjectManagement from "../components/dashboard/ProjectManagement";
 import ChartTypes from "../components/dashboard/ChartTypes";
 import '../stylesheets/dashboard.css';
 
 function Dashboard() {
     const contentArr = useMemo(() => {
-        return ['Chart Types', 'Analytics', 'Project Management'];
+        return ['Chart Types', 'Analytics'];
+        // return ['Chart Types', 'Analytics', 'Project Management'];
     }, []);
     const { selectedItem, handleClickContentArr } = useSubContentContext();
 
@@ -18,8 +19,8 @@ function Dashboard() {
                 return <ChartTypes />;
             case 'Analytics':
                 return <Analytics />;
-            case 'Project Management':
-                return <ProjectManagement />;
+            // case 'Project Management':
+            //     return <ProjectManagement />;
             default:
                 return <ChartTypes />;
         } 
